@@ -1,4 +1,4 @@
-# Charity Recommender Function
+# Charity Recommender System
 
 ## Project Motivation
 - Build a recommendation system to recommend charities to users based on donation history
