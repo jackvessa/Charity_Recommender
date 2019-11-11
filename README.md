@@ -68,7 +68,7 @@ The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-
 |WYPR	|311770828	|Arts, Culture, Humanities	|Serving the metropolitan Baltimore area and th...|	88.1 FM -. Your NPR News Station	|85.59	|MD|
 |Two Ten Footwear Foundation	|222579809	|Human Services	|Funded solely by the footwear industry, Two Te...|	Shoepeople Helping Shoepeople	|90.26|	MA|
 
-<a href="#Charity Recommender System">Back to top</a>
+<a href="#Charity-Recommender-System">Back to top</a>
 
 
 # Exploratory Data Analysis
@@ -85,7 +85,7 @@ Performing EDA on our data set revealed a few things. They are summarized by the
 
 For further EDA please look at the summary [here](ExploratoryDataAnalysis.md)
 
-<a href="#Charity Recommender System">Back to top</a>
+<a href="#Charity-Recommender-System">Back to top</a>
 
 
 # Data Pipeline
@@ -104,7 +104,7 @@ The code to do this can be found [here](src/personality.py)
 
 ![](img/Pipeline.png)
 
-<a href="#Charity Recommender System">Back to top</a>
+<a href="#Charity-Recommender-System">Back to top</a>
 <!-- #endregion -->
 
 # Model Selection
@@ -143,3 +143,5 @@ Web Application Deployed on an Amazon EC2 Instance
 ## Acknowledgments
 
 * Thank you to those that support charitable organizations and help to make our world a better place
+
+<a href="#Charity-Recommender-System">Back to top</a>
