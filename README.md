@@ -75,34 +75,43 @@ The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-
 
 Performing EDA on our data set revealed a few things. They are summarized by the graphs below:
 
-|Data Unbalanced|Questions per post|
+|-|-|
 |:---:|:---:|
-|![](img/unbalanced.png)|![](img/questionspp.png)|
+|![](IMG/)|![](IMG/)|
 
-|Links per post|Words per post|
+|-|-|
 |:---:|:---:|
-|![](img/linkspp.png)|![](img/wordspp.png)|
+|![](IMG/)|![](IMG/)|
 
 For further EDA please look at the summary [here](ExploratoryDataAnalysis.md)
 
 <a href="#Charity-Recommender-System">Back to top</a>
 
-
-# Data Pipeline
+# Data Set 1 Pipeline - Local Charity Recommender
 
 <!-- #region -->
-Let's create a data pipeline, it will aim to do the following:
-- Standardize the text to ASCII
-- Remove weblinks
-- Tokenize the words
-- Use a stemmer on the words
-- Remove HTML decoding
-- Remove punctuation
-- Remove stopwords
+To further process our data, the pipeline will:
+- Take a category and zipcode as user input
+- Filter charities on selected category
+- Assign a "locality score" to each charity
+  * Income code used as baseline score
+  * Multiply incode by "locality" - based on if charity is in the same zipcode, county, or state
+- Returns the top 3 scored charities as the recommendation to user
 
-The code to do this can be found [here](src/personality.py)
+The code to do this can be found [here](src/Charity_Recommender_Functions.py)
 
-![](img/Pipeline.png)
+# Data Set 2 Pipeline - Similar Charity Recommender
+
+<!-- #region -->
+To further process our data, the pipeline will:
+- Take a charity name as user input
+- Use an LDA model to create a "similarity score" for that charity compared to all other charities in database
+  * Compares keyword usage and similarity among charity categories, descriptions, mottos, and states
+- Returns the top 3 similarity scored charities as the recommendation to user
+
+The code to do this can be found [here](src/charity_navigator_functions.py)
+
+![](IMG/)
 
 <a href="#Charity-Recommender-System">Back to top</a>
 <!-- #endregion -->
