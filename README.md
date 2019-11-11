@@ -26,8 +26,8 @@ One Paragraph of project description goes here
 The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf) website and contains information about all charitable organizations in the United States
 
 - Original Data Set
- * 1,719,673 charities (rows)
- * 28 features for each charity (columns)
+  * 1,719,673 charities (rows)
+  * 28 features for each charity (columns)
 - Data Cleaning:
   * Keep charities that offer fully tax deductible donations and have an NTEE Category Code
   * Translate NTEE code into category column
@@ -49,25 +49,23 @@ The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits
 The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset) and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : 
 
 - Original Data Set
- * 1,719,673 charities (rows)
- * 28 features for each charity (columns)
+  * 8,400 charities (rows)
+  * 20 features for each charity (columns)
 - Data Cleaning:
-  * Keep charities that offer fully tax deductible donations and have an NTEE Category Code
-  * Translate NTEE code into category column
+  * Keep all charities
   * Keep essential column features
+  * Create "corpus" column that contains information about charity category, description, motto, and state
 - Cleaned Data Set
- * 992,318 charities (rows)
- * 10 features for each charity (columns)
+ * 8,400 charities (rows)
+ * 8 features for each charity (columns)
 
 - Shows the frequency of each personality type in the population
 
-| - | Type | Frequency |
-|:---:|:---:|:---:|
-| 0 | ISFJ | 13.8% |
-| 1 | ESFJ | 12.3% |
-| 2 | ISTJ | 11.6% |
-| 3 | ISFP | 8.8% |
-| 4 | ESTJ | 8.7% |
+| EIN | NAME | STATE | ZIP | INCOME_CD | NTEE_CD	 | ZIP_FIVE	 | NTEE_Major_Category	 | NTEE_Minor_Category	 | County |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|10130427	|BRIDGTON HOSPITAL	|ME	04009-1148	|9	|E220	|04009	|Health - General and Rehabilitative	|Hospital, General	|Cumberland County|
+|10024645	|BANGOR SYMPHONY ORCHESTRA	|ME	04402-1441	|6	|A69Z	|04402	|Arts, Culture and Humanities	|Symphony Orchestras	|Penobscot County|
+|10015091	|HANOVER SOCCER CLUB INC	|NJ	07927-0013	|4	|N64	|07927	|Recreation, Sports, Leisure, Athletics	|Soccer Clubs, Leagues	|Morris County|
 
 <a href="#Charity Recommender System">Back to top</a>
 
