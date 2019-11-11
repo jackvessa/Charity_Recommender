@@ -120,7 +120,7 @@ We will use Latent Dirichlet Allocation:
 -                   - Accuracy = 60.00%
 -                   - Accuracy = 70.00%
 
-<a href="#Charity Recommender System">Back to top</a>
+<a href="#Charity-Recommender-System">Back to top</a>
 
 
 
