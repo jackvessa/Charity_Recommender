@@ -23,7 +23,7 @@ One Paragraph of project description goes here
 # Overview of the Data
 
 ## First Dataset - IRS:
-The first dataset comes from the IRS.gov website and contains information about all charitable organizations in the United States: [IRS Data](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf)
+The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf) website and contains information about all charitable organizations in the United States
 
 - Original Data Set
  * 1,719,673 charities (rows)
@@ -46,7 +46,7 @@ The first dataset comes from the IRS.gov website and contains information about 
 | 4 | ENTJ | 'You're fired.|||That's another silly misconce... '|
 
 ## Second Dataset - Kaggle:
-The second dataset comes from Kaggle and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : [Kaggle Data](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset)
+The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset) and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : 
 
 - Original Data Set
  * 1,719,673 charities (rows)
