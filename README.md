@@ -20,7 +20,7 @@
 # Overview of the Data
 
 ## First Dataset - IRS:
-The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf) website and contains information about all charitable organizations in the United States
+#### The first dataset comes from [IRS.gov](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf) and contains information about charitable organizations in the United States
 
 - Original Data Set
   * 1,719,673 charities (rows)
@@ -33,7 +33,7 @@ The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits
  * 992,318 charities (rows)
  * 10 features for each charity (columns)
 
-### Preview of IRS Data Set:
+#### Preview of IRS Data Set:
 
 | EIN | NAME | STATE |INCOME_CD | ZIP_FIVE	 | NTEE_Major_Category	 |  County |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -44,7 +44,7 @@ The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits
 
 
 ## Second Dataset - Kaggle:
-The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset) and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : 
+#### The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset) and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : 
 
 - Original Data Set
   * 8,400 charities (rows)
@@ -57,7 +57,7 @@ The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-
  * 8,400 charities (rows)
  * 8 features for each charity (columns)
 
-### Preview of Kaggle Data Set:
+#### Preview of Kaggle Data Set:
 
 | name	|ein	|category	|description	|motto	|score	|state
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
