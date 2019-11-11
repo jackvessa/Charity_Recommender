@@ -37,7 +37,7 @@ The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits
  * 10 features for each charity (columns)
 
 | EIN | NAME | STATE |INCOME_CD | NTEE_CD	 | ZIP_FIVE	 | NTEE_Major_Category	 | NTEE_Minor_Category	 | County |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |10130427	|BRIDGTON HOSPITAL	|ME	|9	|E220	|04009	|Health - General and Rehabilitative	|Hospital, General	|Cumberland County|
 |10024645	|BANGOR SYMPHONY ORCHESTRA	|ME	|6	|A69Z	|04402	|Arts, Culture and Humanities	|Symphony Orchestras	|Penobscot County|
 |10015091	|HANOVER SOCCER CLUB INC	|NJ	|4	|N64	|07927	|Recreation, Sports, Leisure, Athletics	|Soccer Clubs, Leagues	|Morris County|
