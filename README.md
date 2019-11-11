@@ -1,24 +1,21 @@
 # Charity Recommender System
 
-One Paragraph of project description goes here
+## Project Motivation
+- Charitable organizations improve our society
+- These organizations target resources to promote academic success, combat global catastrophes, and support countless other noble causes
+- The motivation for this project stems from a passion to support charitable organizations and connect doners to new charities
+
+## Goals:
+- Recommend local charities (same zip, county, or state) to users based on a given category
+- Build a recommendation system to recommend similar charities to users based on a selected charity
 
 # Table of Contents
-- [Project Motivation](#Project-Motivation)
 - [Overview of the Data](#Overview-of-the-Data)
 - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
 - [Data Pipeline](#Data-Pipeline)
 - [Model Selection](#Model-Selection)
-- [Deep Learning](#Deep-Learning)
-- [Emotional Analysis](#Emotional-Analysis)
 - [Wordclouds](#WordClouds)
 - [Conclusion and Next Steps](#Conclusion-and-Next-Steps)
-
-# Project Motivation
-- Build a recommendation system to recommend charities to users based on donation history
-- Recommend local charities (same zip, county, or state) to users based on a given category
-
-# Goal:
--  
 
 # Overview of the Data
 
@@ -132,6 +129,7 @@ We will use Latent Dirichlet Allocation:
 <a href="#Charity-Recommender-System">Back to top</a>
 
 
+# Conclusion and Next Steps
 
 
 # Deployment
