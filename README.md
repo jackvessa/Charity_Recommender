@@ -28,7 +28,7 @@ The first dataset comes from the IRS.gov website and contains 1,719,673 charitab
 - There are 1,719,673 charities (rows)
 - There are 28 features for each charity (columns)
 - Data Cleaning:
--- X
+  * X
 -
 
 | - | type | posts |
