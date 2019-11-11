@@ -87,7 +87,7 @@ For further EDA please look at the summary [here](ExploratoryDataAnalysis.md)
 # Data Set 1 Pipeline - Local Charity Recommender
 
 <!-- #region -->
-To further process our data, the pipeline will:
+#### To further process our data, the pipeline will:
 - Take a category and zipcode as user input
 - Filter charities on selected category
 - Assign a "locality score" to each charity
@@ -95,18 +95,18 @@ To further process our data, the pipeline will:
   * Multiply incode by "locality" - based on if charity is in the same zipcode, county, or state
 - Returns the top 3 scored charities as the recommendation to user
 
-The code to do this can be found [here](src/Charity_Recommender_Functions.py)
+#### The code to do this can be found [here](src/Charity_Recommender_Functions.py)
 
 # Data Set 2 Pipeline - Similar Charity Recommender
 
 <!-- #region -->
-To further process our data, the pipeline will:
+#### To further process our data, the pipeline will:
 - Take a charity name as user input
 - Use an LDA model to create a "similarity score" for that charity compared to all other charities in database
   * Compares keyword usage and similarity among charity categories, descriptions, mottos, and states
 - Returns the top 3 similarity scored charities as the recommendation to user
 
-The code to do this can be found [here](src/charity_navigator_functions.py)
+#### The code to do this can be found [here](src/charity_navigator_functions.py)
 
 ![](IMG/)
 
