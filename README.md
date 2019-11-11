@@ -22,14 +22,20 @@ One Paragraph of project description goes here
 
 # Overview of the Data
 
-## First Dataset:
-The first dataset comes from the IRS.gov website and contains 1,719,673 charitable organizations: [IRS Data] (https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf)
+## First Dataset - IRS:
+The first dataset comes from the IRS.gov website and contains information about all charitable organizations in the United States: [IRS Data] (https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf)
 
-- There are 1,719,673 charities (rows)
-- There are 28 features for each charity (columns)
+- Original Data Set
+ * 1,719,673 charities (rows)
+ * 28 features for each charity (columns)
 - Data Cleaning:
-  * X
--
+  * Keep charities that offer fully tax deductible donations and have an NTEE Category Code
+  * Translate NTEE code into category column
+  * Keep essential column features
+- Cleaned Data Set
+ * 992,318 charities (rows)
+ * 10 features for each charity (columns)
+
 
 | - | type | posts |
 |:---:|:---:|:---:|
@@ -39,8 +45,19 @@ The first dataset comes from the IRS.gov website and contains 1,719,673 charitab
 | 3 | INTJ | 'Dear INTP, I enjoyed our conversation the o... '|
 | 4 | ENTJ | 'You're fired.|||That's another silly misconce... '|
 
-#### Second Dataset:
-This Data set comes from "MBTI Manual" published by CPP
+## Second Dataset - Kaggle:
+The second dataset comes from Kaggle and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : [Kaggle Data] (https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset)
+
+- Original Data Set
+ * 1,719,673 charities (rows)
+ * 28 features for each charity (columns)
+- Data Cleaning:
+  * Keep charities that offer fully tax deductible donations and have an NTEE Category Code
+  * Translate NTEE code into category column
+  * Keep essential column features
+- Cleaned Data Set
+ * 992,318 charities (rows)
+ * 10 features for each charity (columns)
 
 - Shows the frequency of each personality type in the population
 
