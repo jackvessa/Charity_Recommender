@@ -36,7 +36,7 @@ The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits
  * 992,318 charities (rows)
  * 10 features for each charity (columns)
 
-Preview of IRS Data Set
+Preview of IRS Data Set:
 
 | EIN | NAME | STATE |INCOME_CD | ZIP_FIVE	 | NTEE_Major_Category	 |  County |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -60,15 +60,14 @@ The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-
  * 8,400 charities (rows)
  * 8 features for each charity (columns)
 
-- Shows the frequency of each personality type in the population
+Preview of Kaggle Data Set:
 
-| - | type | posts |
-|:---:|:---:|:---:|
-| 0 | INFJ | 'http://www.youtube.com/watch?v=qsXHcwe3krw|||...'|
-| 1 | ENTP | 'I'm finding the lack of me in these posts ver..' |
-| 2 | INTP | 'Good one _____ https://www.youtube.com/wat...' |
-| 3 | INTJ | 'Dear INTP, I enjoyed our conversation the o... '|
-| 4 | ENTJ | 'You're fired.|||That's another silly misconce... '|
+| name	|ein	|category	|description	|motto	|score	|state
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|1000 Friends of Oregon	|930642086	|Environment	|Working with Oregonians to enhance our quality...|	Great communities. Working lands. Iconic Places.	|91.94	|OR|
+|WYPR	|311770828	|Arts, Culture, Humanities	|Serving the metropolitan Baltimore area and th...|	88.1 FM -. Your NPR News Station	|85.59	|MD|
+|Two Ten Footwear Foundation	|222579809	|Human Services	|Funded solely by the footwear industry, Two Te...|	Shoepeople Helping Shoepeople	|90.26|	MA|
+
 
 <a href="#Charity Recommender System">Back to top</a>
 
