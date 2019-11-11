@@ -36,7 +36,7 @@ The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits
  * 992,318 charities (rows)
  * 10 features for each charity (columns)
 
-Preview of IRS Data Set:
+### Preview of IRS Data Set:
 
 | EIN | NAME | STATE |INCOME_CD | ZIP_FIVE	 | NTEE_Major_Category	 |  County |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -60,7 +60,7 @@ The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-
  * 8,400 charities (rows)
  * 8 features for each charity (columns)
 
-Preview of Kaggle Data Set:
+### Preview of Kaggle Data Set:
 
 | name	|ein	|category	|description	|motto	|score	|state
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -68,12 +68,10 @@ Preview of Kaggle Data Set:
 |WYPR	|311770828	|Arts, Culture, Humanities	|Serving the metropolitan Baltimore area and th...|	88.1 FM -. Your NPR News Station	|85.59	|MD|
 |Two Ten Footwear Foundation	|222579809	|Human Services	|Funded solely by the footwear industry, Two Te...|	Shoepeople Helping Shoepeople	|90.26|	MA|
 
-
 <a href="#Charity Recommender System">Back to top</a>
 
 
 # Exploratory Data Analysis
-
 
 Performing EDA on our data set revealed a few things. They are summarized by the graphs below:
 
