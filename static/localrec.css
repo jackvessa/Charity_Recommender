@@ -1,0 +1,400 @@
+/* Divs */
+div {
+    background-color: white;
+    width: 29%;
+    border: 4px solid #00ac79;
+    padding: 30px;
+    margin: 20px;
+    float: left
+}
+
+
+.SimilarCharity {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+  border: 1px solid #00ac79;
+  margin: 15px;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 25px;
+  width: 95%;
+}
+
+.charityCategory {
+  background-color: white;
+  width: 80%;
+  border: 3px solid #00ac79;
+  padding: 30px;
+  margin: 20px;
+  float: center;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+.again{
+  background-color: white;
+  width: 95%;
+  border: 3px solid blue;
+  padding: 30px;
+  margin: 20px;
+  float: center;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+.RecommendesCharitiesLDA {
+  width: 31%;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+a.button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    -webkit-border-radius: 8px;
+    display: table-cell;
+    background-color: #00ac79;
+    border-radius: 8px;
+    font-size: 16px;
+    height: 36px;
+    justify-content: center;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    vertical-align: middle;
+
+}
+
+a.button2 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    -webkit-border-radius: 8px;
+    display: table-cell;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    height: 36px;
+    justify-content: center;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #00ac79;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 5px;
+    border: 1px solid #00ac79;
+    float: none;
+}
+
+#rcorners1 {
+  border-radius: 25px;
+  background-color: white;
+  width: 100%;
+  border: 3px solid blue;
+  padding: 20px;
+  margin: 10px;
+  float: right;
+}
+
+#rcorners2 {
+  border-radius: 25px;
+  background-color: white;
+  border: 3px solid #00ac79;
+  padding: 20px;
+  margin: 10px;
+  width: 31%;
+  float: left
+}
+
+#rcorners3 {
+  border-radius: 25px;
+  background-color: white;
+  width: 31%;
+  border: 3px solid #00ac79;
+  padding: 20px;
+  margin: 10px;
+  float: left;
+}
+
+#rcorners4 {
+  border-radius: 25px;
+  background-color: white;
+  border: 3px solid #00ac79;
+  padding: 20px;
+  margin: 10px;
+  width: 100%;
+  float: left
+}
+
+
+
+
+/* img{
+    height: 150px;
+    width: 150px;
+} */
+
+body {
+    background-color: white;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
+
+li {
+    font-family: monospace;
+}
+
+/* Headers */
+h1 {
+    font-family: "Barlow", sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    border: 1px solid #00ac79;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 50px;
+}
+
+h4 {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    /* border: 1px solid #00ac79; */
+    margin: 1px;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 30px;
+}
+
+h5 {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    /* border: 1px solid #00ac79; */
+    margin: 1px;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 28px;
+}
+
+p {
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.zip {
+  text-align: center;
+
+}
+
+::placeholder {
+  color: mediumseagreen;
+  font-size: 1em;
+  text-align: center;
+  opacity: 0.4;
+}
+
+a {
+  text-align: center;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#buttonSep {
+    background-color: white;
+    margin: 5px;
+    margin-left: 20px;
+
+    padding: 5px;
+    align-items: center;
+    width: 225px;
+    border: 0px solid #00ac79;
+    justify-content: center;
+    display: inline-block;
+    float: none;
+
+}
+
+#controls {
+    background-color: yellow;
+    border: 3px dashed green;
+    margin: 25px;
+    padding: 25px;
+}
+
+
+
+
+
+
+.Animal-Related{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Animal.jpg?raw=true);}
+.Art{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Art%20Culture.jpg?raw=true);}
+.Civil{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Civil%20Rights.jpg?raw=true);}
+.Community{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Community%20Improvement.jpg?raw=true);}
+.Crime{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Crime.jpg?raw=true);}
+.Disease{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Diseases.jpg?raw=true);}
+.Education{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Education.jpg?raw=true);}
+.Environment{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Environmental%20Quality.jpg?raw=true);}
+.Health{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Health.jpg?raw=true);}
+.Human{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Human%20Services.jpg?raw=true);}
+.International{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/International.jpg?raw=true);}
+.Philanthropy{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Philanthropy.jpg?raw=true);}
+.Public{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Public%2C%20Society%20Benefit.jpg?raw=true);}
+.Recreation{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Sports%20and%20Recreation.jpg?raw=true);}
+.Youth{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Youth%20Development.jpg?raw=true);}
+
+
+.cc-selector{
+   width: 100%;
+   border: 1px solid black;
+   margin-left: 1px;
+ }
+.cc-selector input{
+     margin:0;padding:0;
+     -webkit-appearance:none;
+        -moz-appearance:none;
+             appearance:none;
+ }
+.cc-selector input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    border: 3px solid #00ac79;
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:260px;
+    height:300px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 25px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+     -webkit-filter: brightness(1.8) grayscale(.9) opacity(.9);
+       -moz-filter: brightness(1.8) grayscale(.9) opacity(.9);
+            filter: brightness(1.8) grayscale(.9) opacity(.9);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+* { box-sizing: border-box; }
+body {
+  font: 16px Arial;
+}
+
+label {
+    display: inline-block;
+    width: 24%;
+}
+
+input {
+
+
+  height: 30px;
+  font-size: 30px;
+  font-weight: bold;
+
+
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  width: 33%;
+  height: 50px;
+  font-size: 17px;
+  text-align: center;
+}
+
+input {
+
+}
+
+
+
+input[type=radio] {
+  width: 0%;
+  /* float: left; */
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+  width: 95%;
+}
+
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 95%;
+}
+.autocomplete-items div {
+  /* padding: 10px; */
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+  width: 95%;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
