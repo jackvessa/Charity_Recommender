@@ -36,14 +36,13 @@ The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits
  * 992,318 charities (rows)
  * 10 features for each charity (columns)
 
+| EIN | NAME | STATE |INCOME_CD | NTEE_CD	 | ZIP_FIVE	 | NTEE_Major_Category	 | NTEE_Minor_Category	 | County |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|10130427	|BRIDGTON HOSPITAL	|ME	|9	|E220	|04009	|Health - General and Rehabilitative	|Hospital, General	|Cumberland County|
+|10024645	|BANGOR SYMPHONY ORCHESTRA	|ME	|6	|A69Z	|04402	|Arts, Culture and Humanities	|Symphony Orchestras	|Penobscot County|
+|10015091	|HANOVER SOCCER CLUB INC	|NJ	|4	|N64	|07927	|Recreation, Sports, Leisure, Athletics	|Soccer Clubs, Leagues	|Morris County|
 
-| - | type | posts |
-|:---:|:---:|:---:|
-| 0 | INFJ | 'http://www.youtube.com/watch?v=qsXHcwe3krw|||...'|
-| 1 | ENTP | 'I'm finding the lack of me in these posts ver..' |
-| 2 | INTP | 'Good one _____ https://www.youtube.com/wat...' |
-| 3 | INTJ | 'Dear INTP, I enjoyed our conversation the o... '|
-| 4 | ENTJ | 'You're fired.|||That's another silly misconce... '|
+
 
 ## Second Dataset - Kaggle:
 The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset) and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : 
@@ -61,11 +60,13 @@ The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-
 
 - Shows the frequency of each personality type in the population
 
-| EIN | NAME | STATE | ZIP | INCOME_CD | NTEE_CD	 | ZIP_FIVE	 | NTEE_Major_Category	 | NTEE_Minor_Category	 | County |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|10130427	|BRIDGTON HOSPITAL	|ME	04009-1148	|9	|E220	|04009	|Health - General and Rehabilitative	|Hospital, General	|Cumberland County|
-|10024645	|BANGOR SYMPHONY ORCHESTRA	|ME	04402-1441	|6	|A69Z	|04402	|Arts, Culture and Humanities	|Symphony Orchestras	|Penobscot County|
-|10015091	|HANOVER SOCCER CLUB INC	|NJ	07927-0013	|4	|N64	|07927	|Recreation, Sports, Leisure, Athletics	|Soccer Clubs, Leagues	|Morris County|
+| - | type | posts |
+|:---:|:---:|:---:|
+| 0 | INFJ | 'http://www.youtube.com/watch?v=qsXHcwe3krw|||...'|
+| 1 | ENTP | 'I'm finding the lack of me in these posts ver..' |
+| 2 | INTP | 'Good one _____ https://www.youtube.com/wat...' |
+| 3 | INTJ | 'Dear INTP, I enjoyed our conversation the o... '|
+| 4 | ENTJ | 'You're fired.|||That's another silly misconce... '|
 
 <a href="#Charity Recommender System">Back to top</a>
 
