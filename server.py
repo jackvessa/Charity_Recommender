@@ -143,9 +143,10 @@ def localrec():
                             <p> {charity_string3} </p>
                         </div>
 
-                        <div class = "again">
-                            <p><a href="/localrec">Click here to try again!</a></p>
+                        <div class = 'again'>
+                            <a href="/localrec" class="button3">Try Again</a>
                         </div>
+
                     </body>
 
                 </html>
@@ -178,9 +179,6 @@ def localrec():
                             <input type="radio" name="major_category" value="Arts, Culture and Humanities" id=Art>
                             <label class="drinkcard-cc Art" for="Art"></label>
 
-                            <input type="radio" name="major_category" value="Civil Rights, Social Action, Advocacy" id=Civil>
-                            <label class="drinkcard-cc Civil" for="Civil"></label>
-
                             <input type="radio" name="major_category" value="Diseases, Disorders, Medical Disciplines" id=Disease>
                             <label class="drinkcard-cc Disease" for="Disease"></label>
 
@@ -199,8 +197,6 @@ def localrec():
                             <input type="radio" name="major_category" value="International, Foreign Affairs and National Security" id=International>
                             <label class="drinkcard-cc International" for="International"></label>
 
-                            <input type="radio" name="major_category" value="Philanthropy, Voluntarism and Grantmaking Foundations" id=Philanthropy>
-                            <label class="drinkcard-cc Philanthropy" for="Philanthropy"></label>
 
                             <input type="radio" name="major_category" value="Recreation, Sports, Leisure, Athletics" id=Recreation>
                             <label class="drinkcard-cc Recreation" for="Recreation"></label>
@@ -223,9 +219,9 @@ def localrec():
                     </div>
 
                     <div class = 'again'>
-                      <p><a href="/">Back to Homepage</a>
-                      </p>
+                        <a href="/" class="button3">Homepage</a>
                     </div>
+
                 </form>
 
             </body>
@@ -239,7 +235,10 @@ def localrec():
 # <label class="drinkcard-cc Public" for="Public"></label>
 # <input type="radio" name="major_category" value="Crime, Legal-Related" id=Crime>
 # <label class="drinkcard-cc Crime" for="Crime"></label>
-
+# <input type="radio" name="major_category" value="Philanthropy, Voluntarism and Grantmaking Foundations" id=Philanthropy>
+# <label class="drinkcard-cc Philanthropy" for="Philanthropy"></label>
+# <input type="radio" name="major_category" value="Civil Rights, Social Action, Advocacy" id=Civil>
+# <label class="drinkcard-cc Civil" for="Civil"></label>
 
 
 @app.route('/charitySimilarity', methods=["GET", "POST"])
@@ -265,27 +264,44 @@ def charitySimilarity():
 
             user_score = user_file.score.iloc[0]
 
-            user_info = "Charities Similar to:<br/><br/>"
-            user_info += "Name:<br/>" + user_file.name.iloc[0]+ "<br/><br/>"
-            user_info += "Category:<br/>" + user_file.category.iloc[0]+ "<br/><br/>"
+            user_info = "Charities Similar to:    &#8195;&#8195;" + user_file.name.iloc[0]+ "<br/><br/>"
+            user_info += "Category:    &#8195;&#8195;" + user_file.category.iloc[0]+ "<br/><br/>"
             user_info += "Description:<br/>" + user_file.description.iloc[0]+ "<br/><br/>"
-            user_info += "State:<br/>" + user_file.state.iloc[0]+ "<br/><br/>"
-            user_info += "Score:<br/>" + str(user_score)+ "<br/><br/>"
+            user_info += "State:    &#8195;&#8195;" + user_file.state.iloc[0]+ "<br/><br/>"
+            user_info += "Score:    &#8195;&#8195;" + str(user_score)+ "<br/><br/>"
 
-            charity_info_list = []
+            charity_info_list,link_list,google_links_list = [],[],[]
 
             for number,score in top_3_similar.items():
+                charity_link = ""
+                google_link = ''
+
                 file_info = charity_navigator_df.iloc[number:number+1]
+
+                score = round(score*100,2)
 
                 charity_info = ""
                 charity_info += "Name:<br/>" + file_info.name.iloc[0]+ "<br/><br/>"
                 charity_info += "Category:<br/>" + file_info.category.iloc[0]+ "<br/><br/>"
                 charity_info += "Description:<br/>" + file_info.description.iloc[0]+ "<br/><br/>"
-                charity_info += "Similarity Rating:<br/>" + str(score) + "<br/><br/>"
-                charity_info += "State:<br/>" + user_file.state.iloc[0]+ "<br/><br/>"
-                charity_info += "Score:<br/>" + str(user_file.score.iloc[0])+ "<br/><br/>"
+                charity_info += "Similarity:  &#8195;" + str(score) + "%<br/><br/>"
+                charity_info += "State:      &#8195;&#8195;" + user_file.state.iloc[0]+ "<br/><br/>"
+                charity_info += "Score:     &#8195;&#8195;" + str(user_file.score.iloc[0])+ "<br/><br/>"
 
                 charity_info_list.append(charity_info)
+
+                name = str(file_info.name.iloc[0])
+                name = name.replace(" ","-")
+
+                charity_link += "https://givz.com/charity/" + name +'-'+str(file_info.ein.iloc[0])
+                link_list.append(charity_link)
+
+                goog_name = name.replace("-","+")
+                goog_name = goog_name.replace("&","and")
+                google_link += 'http://www.google.com/search?q=' + goog_name +"+"+str(file_info.ein.iloc[0])
+
+                google_links_list.append(google_link)
+
 
             return '''
                 <html>
@@ -307,24 +323,39 @@ def charitySimilarity():
 
                         <div class="RecommendesCharitiesLDA" id="rcorners2">
                             <p> {charity1} </p>
+                            <div id="buttonSep">
+                                <a href={link1} target="_blank" class="button">Donate</a>
+                                <a href={goog1} target="_blank" class="button2">Learn More</a>
+                            </div>
                         </div>
 
                         <div class="RecommendesCharitiesLDA" id="rcorners2">
                             <p> {charity2} </p>
+                            <div id="buttonSep">
+                                <a href={link2} target="_blank" class="button">Donate</a>
+                                <a href={goog2} target="_blank" class="button2">Learn More</a>
+                            </div>
                         </div>
 
                         <div class="RecommendesCharitiesLDA" id="rcorners2">
                             <p> {charity3} </p>
+                            <div id="buttonSep">
+                                <a href={link3} target="_blank" class="button">Donate</a>
+                                <a href={goog3} target="_blank" class="button2">Learn More</a>
+                            </div>
                         </div>
 
-                        <div class= 'again'>
-                            <p><a href="/charitySimilarity">Click here to try again!</a></p>
+                        <div class = 'again'>
+                            <a href="/charitySimilarity" class="button3">Try Again</a>
                         </div>
+
                     </body>
 
                 </html>
             '''.format(user_info = user_info, charity1 = charity_info_list[0],
-            charity2 = charity_info_list[1],charity3 = charity_info_list[2])
+            charity2 = charity_info_list[1],charity3 = charity_info_list[2],
+            link1=link_list[0],link2=link_list[1],link3=link_list[2],
+            goog1=google_links_list[0],goog2=google_links_list[1],goog3=google_links_list[2])
     return """
         <html>
 
@@ -347,8 +378,7 @@ def charitySimilarity():
                 </form>
 
               <div class = 'again'>
-                <p><a href="/">Homepage</a>
-                </p>
+                  <a href="/" class="button3">Homepage</a>
               </div>
 
                 <script>
