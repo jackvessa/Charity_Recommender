@@ -36,6 +36,8 @@ The first dataset comes from the [IRS](https://www.irs.gov/charities-non-profits
  * 992,318 charities (rows)
  * 10 features for each charity (columns)
 
+Preview of IRS Data Set
+
 | EIN | NAME | STATE |INCOME_CD | ZIP_FIVE	 | NTEE_Major_Category	 |  County |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |10130427	|BRIDGTON HOSPITAL	|ME	|9	|04009	|Health - General and Rehabilitative	|Cumberland County|
