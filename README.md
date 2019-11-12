@@ -3,7 +3,7 @@
 ## Project Motivation
 - Charitable organizations improve our society
 - These organizations target resources to promote academic success, combat global catastrophes, and support countless other noble causes
-- The motivation for this project stems from a passion to support charitable organizations and connect doners to new charities
+- The motivation for this project stems from a passion to support charitable organizations and connect donors to new charities
 
 ## Goals:
 - Recommend local charities (same zip, county, or state) to users based on a given category
