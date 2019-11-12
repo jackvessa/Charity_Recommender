@@ -43,9 +43,11 @@ def localrec():
 
 
             top_recs = recommend_charities(charity_df_optimized,zipcode,major_category)
+            county, state = find_county_and_state(zipcode)
 
-            user_info = "Selected Zipcode: " + str(zipcode) + "<br/>"
-            user_info += "Selected Category: " + str(major_category) + "<br/><br/>"
+            user_info = "Local Information: <br/>"
+            user_info += str(zipcode) + " - "  + str(county) + " - " + str(state) + "<br/><br/>"
+            user_info += "Category: <br/>" + str(major_category)
 
             charity_info_list = []
 
@@ -93,7 +95,7 @@ def localrec():
 
                     <head>
                         <title>Charity Recommendations</title>
-                        <h1>Top 3 Charity Recommendations</h1>
+                        <h1>Local Charity Recommendations</h1>
 
                         <link rel='stylesheet' href='static/localrec.css'>
 
@@ -104,13 +106,13 @@ def localrec():
 
                     <body>
 
-                        <div class="SimilarCharity">
-                            <p> {user_info}</p>
+                        <div class="LocalInfo">
+                            <p5> {user_info}</p5>
                         </div>
 
 
 
-                        <div id="rcorners3">
+                        <div id="rcorners2">
                             <h4> {name1} </h4>
 
                             <div id="buttonSep">
@@ -121,7 +123,7 @@ def localrec():
                             <p> {charity_string1} </p>
                         </div>
 
-                        <div id="rcorners3">
+                        <div id="rcorners2">
                             <h4> {name2} </h4>
 
                             <div id="buttonSep">
@@ -132,7 +134,7 @@ def localrec():
                             <p> {charity_string2} </p>
                         </div>
 
-                        <div id="rcorners3">
+                        <div id="rcorners2">
                             <h4> {name3} </h4>
 
                             <div id="buttonSep">
@@ -141,10 +143,6 @@ def localrec():
                             </div>
 
                             <p> {charity_string3} </p>
-                        </div>
-
-                        <div class = 'again'>
-                            <a href="/localrec" class="button3">Try Again</a>
                         </div>
 
                     </body>
@@ -158,10 +156,21 @@ def localrec():
         <html>
 
               <head>
+
                 <meta charset="utf-8">
                 <title>Local Charity Recommender</title>
                 <link rel='stylesheet' href='static/localrec.css'>
 
+                <div class = 'navBar'>
+
+                    <a href="/localrec" class="button">Local Charities</a>
+
+                    <a href="/" class="button4">Homepage</a>
+
+                    <a href="/charitySimilarity" class="button">Similar Charities</a>
+
+
+                </div>
 
               </head>
 
@@ -170,9 +179,20 @@ def localrec():
 
                 <form method="post" enctype="multipart/form-data">
                     <div class = "charityCategory" id="rcorners4">
-                        <h4>Step 1: Choose a Category:</h4>
 
                         <div class="cc-selector">
+
+                            <div id = "rcorners1">
+
+                                <h4>Step 1: Enter 5-Digit Zipcode</h4>
+
+                                <p class="zip"><input name="zipcode" autocomplete="off" placeholder="Enter 5-Digit Zipcode"/></p>
+
+
+                            </div>
+
+                            <h4>Step 2: Choose a Category</h4>
+
                             <input type="radio" name="major_category" value="Animal-Related" id=Animal>
                             <label class="drinkcard-cc Animal-Related" for="Animal"></label>
 
@@ -206,20 +226,12 @@ def localrec():
 
                             <div id = "rcorners1">
 
-                                <h5>Step 2:</br> Enter 5-Digit Zipcode</h5>
-
-                                <p class="zip"><input name="zipcode" autocomplete="off" placeholder="Enter 5-Digit Zipcode"/></p>
-
                                 <p class="zip"><input type="submit" value="Submit Specifications" /></p>
 
                             </div>
 
                         </div>
 
-                    </div>
-
-                    <div class = 'again'>
-                        <a href="/" class="button3">Homepage</a>
                     </div>
 
                 </form>
@@ -271,6 +283,19 @@ def charitySimilarity():
             user_info += "Score:    &#8195;&#8195;" + str(user_score)+ "<br/><br/>"
 
             charity_info_list,link_list,google_links_list = [],[],[]
+            charity_link, google_link = '',''
+
+            name = str(user_file.name.iloc[0])
+            name = name.replace(" ","-")
+
+            charity_link += "https://givz.com/charity/" + name +'-'+str(user_file.ein.iloc[0])
+            link_list.append(charity_link)
+
+            goog_name = name.replace("-","+")
+            goog_name = goog_name.replace("&","and")
+            google_link += 'http://www.google.com/search?q=' + goog_name +"+"+str(user_file.ein.iloc[0])
+
+            google_links_list.append(google_link)
 
             for number,score in top_3_similar.items():
                 charity_link = ""
@@ -285,8 +310,8 @@ def charitySimilarity():
                 charity_info += "Category:<br/>" + file_info.category.iloc[0]+ "<br/><br/>"
                 charity_info += "Description:<br/>" + file_info.description.iloc[0]+ "<br/><br/>"
                 charity_info += "Similarity:  &#8195;" + str(score) + "%<br/><br/>"
-                charity_info += "State:      &#8195;&#8195;" + user_file.state.iloc[0]+ "<br/><br/>"
-                charity_info += "Score:     &#8195;&#8195;" + str(user_file.score.iloc[0])+ "<br/><br/>"
+                charity_info += "State:      &#8195;&#8195;" + file_info.state.iloc[0]+ "<br/><br/>"
+                charity_info += "Score:     &#8195;&#8195;" + str(file_info.score.iloc[0])+ "<br/><br/>"
 
                 charity_info_list.append(charity_info)
 
@@ -310,6 +335,17 @@ def charitySimilarity():
                         <title>Similar Charity Recommendations</title>
                         <link rel='stylesheet' href='static/localrec.css'>
 
+                        <div class = 'navBar'>
+
+                            <a href="/localrec" class="button">Local Charities</a>
+
+                            <a href="/" class="button4">Homepage</a>
+
+                            <a href="/charitySimilarity" class="button">Similar Charities</a>
+
+
+                        </div>
+
                         <h1>Similar Charity Recommendations</h1>
 
 
@@ -319,6 +355,10 @@ def charitySimilarity():
 
                         <div class="SimilarCharity">
                             <p> {user_info}</p>
+                            <div id="buttonSep">
+                                <a href={link0} target="_blank" class="button">Donate</a>
+                                <a href={goog0} target="_blank" class="button2">Learn More</a>
+                            </div>
                         </div>
 
                         <div class="RecommendesCharitiesLDA" id="rcorners2">
@@ -345,17 +385,13 @@ def charitySimilarity():
                             </div>
                         </div>
 
-                        <div class = 'again'>
-                            <a href="/charitySimilarity" class="button3">Try Again</a>
-                        </div>
-
                     </body>
 
                 </html>
             '''.format(user_info = user_info, charity1 = charity_info_list[0],
             charity2 = charity_info_list[1],charity3 = charity_info_list[2],
-            link1=link_list[0],link2=link_list[1],link3=link_list[2],
-            goog1=google_links_list[0],goog2=google_links_list[1],goog3=google_links_list[2])
+            link0=link_list[0],link1=link_list[1],link2=link_list[2],link3=link_list[3],
+            goog0=google_links_list[0],goog1=google_links_list[1],goog2=google_links_list[2],goog3=google_links_list[3])
     return """
         <html>
 
@@ -364,6 +400,17 @@ def charitySimilarity():
                 <title>Local Charity Recommender</title>
                 <link rel='stylesheet' href='static/localrec.css'>
 
+                <div class = 'navBar'>
+
+                    <a href="/localrec" class="button">Local Charities</a>
+
+                    <a href="/" class="button4">Homepage</a>
+
+                    <a href="/charitySimilarity" class="button">Similar Charities</a>
+
+
+                </div>
+
               </head>
 
             <body>
@@ -371,15 +418,17 @@ def charitySimilarity():
 
                 <form autocomplete="off" method="post" enctype="multipart/form-data">
                   <div class="autocomplete">
-                    <input id="myInput" type="text" name="charity_name" placeholder="Enter Charity">
 
-                    <p><input type="submit" value="Find Similar Charities" /></p>
+                    <div id = "rcorners1">
+
+                        <input class = 'zip' type="text" name="charity_name" placeholder="Enter Charity Name">
+
+                        <p class='zip'><input type="submit" value="Find Similar Charities" /></p>
+
+                    </div>
+
                   </div>
                 </form>
-
-              <div class = 'again'>
-                  <a href="/" class="button3">Homepage</a>
-              </div>
 
                 <script>
                     function autocomplete(inp, arr) {

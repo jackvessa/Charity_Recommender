@@ -5,6 +5,28 @@ import math
 from uszipcode import SearchEngine
 
 
+def find_county_and_state(zipcode):
+    '''
+    Function
+    --------
+    Takes Zipcode and returns County & State
+
+    Parameters
+    ----------
+    zipcode : Zip Code to Match on
+
+    Returns
+    -------
+    county : county of zipcode
+    state : state of zipcode
+    '''
+    search = SearchEngine(simple_zipcode=True)
+    result = search.by_zipcode(zipcode)
+    county = result.county
+    state = result.state
+
+    return county, state
+
 def find_zip_state(df,zipcode):
     '''
     Function

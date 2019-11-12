@@ -15,13 +15,30 @@ div {
   font-weight: 600;
   color: black;
   background-color: white;
-  border: 1px solid #00ac79;
+  border: 2px solid #00ac79;
   margin: 10px;
   padding: 10px;
   text-align: center;
   font-weight: bold;
   border-radius: 25px;
   width: 97%;
+}
+
+.LocalInfo {
+  font-family: "Barlow", sans-serif;
+  font-size: 35px;
+  font-weight: normal;
+  color: black;
+  background-color: white;
+  border: 2px solid #00ac79;
+  /* margin: 10px;
+  padding: 10px; */
+  text-align: center;
+  font-weight: bold;
+  border-radius: 25px;
+  width: 97%;
+  vertical-align: middle;
+  height:270px;
 }
 
 .charityCategory {
@@ -35,9 +52,27 @@ div {
   border-radius: 25px;
 }
 
+.navBar{
+  background-color: white;
+  width: 97%;
+  border: 0px solid blue;
+  height:50px;
+  margin: 5px;
+  margin-bottom: 20px;
+  float: center;
+  font-weight: bold;
+  text-align:center;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  top:50%;
+  left:50%;
+  display: flex;
+}
+
 .again{
   background-color: white;
-  width: 15%;
+  width: 395px;
   border: 3px solid blue;
   height:100px;
   margin: 10px;
@@ -45,6 +80,11 @@ div {
   font-weight: bold;
   text-align:center;
   border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  top:50%;
+  left:50%;
+  display: flex;
 }
 
 .RecommendesCharitiesLDA {
@@ -54,7 +94,7 @@ div {
 
 }
 
-a.button {
+a.buttonHome {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -63,8 +103,34 @@ a.button {
     display: table-cell;
     background-color: #00ac79;
     border-radius: 8px;
+
+    height: 200px;
+    width: 350px;
+    justify-content: center;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    vertical-align: middle;
+    align-items: center;
+    text-align: center;
+}
+
+a.button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    -webkit-border-radius: 8px;
+    display: flex;
+    background-color: #00ac79;
+    border-radius: 8px;
     font-size: 20px;
-    height: 36px;
+    height: 45px;
     justify-content: center;
     outline: none;
     padding-left: 20px;
@@ -74,6 +140,8 @@ a.button {
     font-weight: 600;
     text-decoration: none;
     vertical-align: middle;
+    align-items: center;
+    text-align: center;
 }
 
 a.button2 {
@@ -82,25 +150,23 @@ a.button2 {
     appearance: none;
     border: none;
     -webkit-border-radius: 8px;
-    display: table-cell;
+    display: flex;
     background-color: white;
     border-radius: 8px;
     font-size: 20px;
-    height: 36px;
+    height: 45px;
     justify-content: center;
     outline: none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     color: #00ac79;
     font-family: "Barlow", sans-serif;
     font-weight: 600;
     text-decoration: none;
     vertical-align: middle;
-    table-layout: auto;
     text-align:center;
-    margin: 5px;
-    border: 1px solid #00ac79;
-    float: none;
+    align-items: center;
+    border: 2px solid #00ac79;
 }
 
 a.button3 {
@@ -125,12 +191,37 @@ a.button3 {
   vertical-align: middle;
 }
 
+a.button4 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  -webkit-border-radius: 8px;
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  font-size: 20px;
+  height: 45px;
+  justify-content: center;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #00ac79;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: middle;
+  text-align:center;
+  align-items: center;
+  border: 2px solid #00ac79;
+}
+
 #rcorners1 {
   border-radius: 25px;
   background-color: white;
   width: 100%;
-  border: 3px solid blue;
-  padding: 20px;
+  border: 0px solid blue;
+  padding: 0px;
   margin: 10px;
   float: right;
 }
@@ -138,7 +229,7 @@ a.button3 {
 #rcorners2 {
   border-radius: 25px;
   background-color: white;
-  border: 3px solid #00ac79;
+  border: 2px solid #00ac79;
   padding: 20px;
   margin: 10px;
   width: 31%;
@@ -148,22 +239,29 @@ a.button3 {
 #rcorners3 {
   border-radius: 25px;
   background-color: white;
-  width: 31%;
-  border: 3px solid #00ac79;
-  padding: 20px;
-  margin: 10px;
-  float: left;
+  width: 45%;
+  border: 0px solid #00ac79;
+  /* padding: 20px; */
+  /* margin: 10px; */
+  float: center;
+  text-align:center;
+  align-items: center;
+  padding-left: 125px;
+  padding-right: 5px;
+
 }
 
 #rcorners4 {
   border-radius: 25px;
   background-color: white;
-  border: 3px solid #00ac79;
+  border: 0px solid #00ac79;
   padding: 6px;
   margin: 10px;
   width: 98%;
   float: left
 }
+
+
 
 
 /* img{
@@ -197,7 +295,7 @@ h1 {
     font-weight: 600;
     color:  #00ac79;
     background-color: white;
-    border: 1px solid #00ac79;
+    border: 0px solid #00ac79;
     margin: 15px;
     padding: 15px;
     text-align: center;
@@ -212,7 +310,7 @@ h3 {
     font-weight: 600;
     color:  black;
     background-color: white;
-    border: 1px solid #00ac79;
+    border: 0px solid #00ac79;
     margin: 15px;
     padding: 15px;
     text-align: center;
@@ -252,19 +350,9 @@ h5 {
 
 p {
   text-align: left;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 18px;
-}
-
-.zip {
-  text-align: center;
-}
-
-::placeholder {
-  color: mediumseagreen;
-  font-size: 1em;
-  text-align: center;
-  opacity: 0.4;
+  align-items: center;
 }
 
 a {
@@ -274,6 +362,20 @@ a {
   margin-right: 5px;
 }
 
+.zip {
+  text-align: center;
+
+}
+
+::placeholder {
+  color: mediumseagreen;
+  font-size: 1em;
+  text-align: center;
+  opacity: 0.4;
+}
+
+
+
 #buttonSep {
     background-color: white;
     padding: 2px;
@@ -281,7 +383,7 @@ a {
     width: 90%;
     border: 0px solid #00ac79;
     justify-content: center;
-    display: inline-block;
+    display: flex;
     text-align:center;
     float: none;
 
@@ -342,11 +444,11 @@ a {
     background-size:contain;
     background-repeat:no-repeat;
     display:inline-block;
-    width:220px;
-    height:240px;
-    margin: 1px;
+    width:200px;
+    height:230px;
+    margin: 9px;
     padding: 5px;
-    border-radius: 25px;
+    border-radius: 15px;
     -webkit-transition: all 100ms ease-in;
        -moz-transition: all 100ms ease-in;
             transition: all 100ms ease-in;
@@ -363,23 +465,24 @@ a {
 * { box-sizing: border-box; }
 body {
   font: 16px Arial;
+  text-align: center;
 }
 
 label {
     display: inline-block;
     width: 24%;
+    text-align: center;
 }
 
 input {
-  font-size: 30px;
   font-weight: bold;
   border: 1px solid transparent;
   background-color: #f1f1f1;
   padding: 10px;
-  width: 33%;
   height: 50px;
-  font-size: 17px;
   text-align: center;
+  width: 60%;
+  font-size: 35px;
 }
 
 
@@ -394,11 +497,16 @@ input[type=radio] {
 
 input[type=text] {
   background-color: #f1f1f1;
-  width: 100%;
+  width: 60%;
+  font-size: 35px;
+  text-align: center;
+  align-items: center;
 }
 input[type=submit] {
   background-color: DodgerBlue;
   color: #fff;
+  font-size: 25px;
+  width:60%;
 }
 
 .autocomplete {
@@ -407,7 +515,7 @@ input[type=submit] {
   display: inline-block;
   width: 95%;
   color:#00ac79;
-
+  border: 0px solid black;
 }
 
 
