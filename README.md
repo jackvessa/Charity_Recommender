@@ -1,5 +1,7 @@
 # Charity Recommender System
 
+Access the web application [here](https://www.linkedin.com/feed/)
+
 A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## Project Motivation
