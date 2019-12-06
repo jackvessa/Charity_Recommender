@@ -2,6 +2,8 @@
 
 Access the web application [here](https://www.linkedin.com/feed/)
 
+<a href="http://example.com/" target="_blank">Hello, world!</a>
+
 A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## Project Motivation
