@@ -1,5 +1,7 @@
 # Charity Recommender System
 
+A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
+
 ## Project Motivation
 - Charitable organizations improve our society
 - These organizations target resources to promote academic success, combat global catastrophes, and support countless other noble causes
@@ -114,7 +116,6 @@ For further EDA please look at the summary [here](ExploratoryDataAnalysis.md)
 <!-- #endregion -->
 
 # Model Selection
-
 
 The Charity Navigator Dataset contains 11 categories. Recommending one of these categories at random would result in the same category  getting recommended 9.09% of the time. The goal for the recommendation model is to improve this score to above 50%.
 The code for this can be found [here](src/Charity_Navigator_LDA_Similarity.ipynb)
