@@ -1,8 +1,6 @@
 # Charity Recommender System
 
-Access the web application [here](https://www.linkedin.com/feed/)
-
-<a href="http://example.com/" target="_blank">Hello, world!</a>
+Access the web application [here](http://char-rec-env.smvevavexr.us-east-2.elasticbeanstalk.com/)
 
 A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
