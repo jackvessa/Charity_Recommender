@@ -1,6 +1,6 @@
 # Charity Recommender System
 
-Access the web application [here](http://char-rec-env.smvevavexr.us-east-2.elasticbeanstalk.com/)
+Access the web application at [http://www.charityrecommender.com/](http://www.charityrecommender.com/)
 
 A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
