@@ -4,6 +4,7 @@ import random
 from nltk.corpus import stopwords
 from collections import defaultdict
 from gensim import corpora, models, similarities
+import pickle
 
 def process_corpus(text_corpus):
     '''
@@ -81,9 +82,8 @@ def find_similar_charities_combined(train_df,test_df):
 #         if len(doc) >= document_min_words_cutoff:
 #             char_desc_trimmed.append(doc)
 
-    char_desc_trimmed = np.array(train_df['corpus'])
+    corpus = np.array(train_df['corpus'])
 
-    corpus = char_desc_trimmed
     processed_corpus = process_corpus(corpus)
 
     print("2. Creating Index from Training Corpus")
@@ -224,3 +224,31 @@ def create_sim_word_dict(text1, text2, dictionary):
                 similar_words[word] +=1
 
     return similar_words
+
+
+def get_recs_from_pickled_model(document):
+    '''
+    '''
+    # load the model from disk
+    loaded_model = pickle.load(open('src/finalized_model.sav', 'rb'))
+    # load the index from disk
+    loaded_index = pickle.load(open('src/finalized_index.sav', 'rb'))
+    # load the dictionary from disk
+    loaded_dict = pickle.load(open('src/finalized_dict.sav', 'rb'))
+
+    document = document.iloc[0]
+
+    print(document)
+
+    print(document.split())
+
+    query_bow = loaded_dict.doc2bow(document.split())
+
+    sims = loaded_index[loaded_model[query_bow]]
+
+    top_3_sim = dict()
+
+    for document_number, score in sorted(enumerate(sims), key=lambda x: x[1], reverse=True)[1:4]:
+        top_3_sim[document_number] = score
+
+    return top_3_sim, loaded_dict
