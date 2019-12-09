@@ -6,12 +6,12 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## Project Motivation
 - Charitable organizations improve our society
-- These organizations target resources to promote academic success, combat global catastrophes, and support countless other noble causes
+- These organizations allocate resources to promote academic success, combat global catastrophes, and support countless other noble causes
 - The motivation for this project stems from a passion to support charitable organizations and connect donors to new charities
 
 ## Goals:
-- Recommend local charities (same zip, county, or state) to users based on a given category
-- Build a recommendation system to recommend similar charities to users based on a selected charity
+- Recommend local charities from a user-inputted category and zipcode
+- Build a recommendation system to recommend charities that are similar to user-selected charity
 
 # Table of Contents
 - [Overview of the Data](#Overview-of-the-Data)
