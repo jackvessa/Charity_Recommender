@@ -76,7 +76,7 @@ div {
   background-color: white;
   width: 97%;
   border: 0px solid blue;
-  height:250px;
+  height:450px;
   margin: 5px;
   margin-bottom: 20px;
   float: center;
@@ -88,6 +88,27 @@ div {
   top:50%;
   left:50%;
   display: flex;
+}
+
+.homebutton{
+  background-color: white;
+  /* width: 97%; */
+  border: 0px solid blue;
+  width: 31%;
+  padding: 0px;
+
+  /* height:250px; */
+  /* margin: 5px;
+  margin-bottom: 20px; */
+  /* float: center;
+  font-weight: bold;
+  text-align:center;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  top:50%;
+  left:50%;
+  display: flex; */
 }
 
 .again{
@@ -150,6 +171,10 @@ div {
   display: inline-block;
 }
 
+a.imageHome {
+  margin:0px;
+}
+
 a.buttonHome {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -158,8 +183,7 @@ a.buttonHome {
     -webkit-border-radius: 8px;
     display: table-cell;
     background-color: #00ac79;
-    border-radius: 8px;
-
+    border-radius: 2px;
     height: 100px;
     width: 400px;
     justify-content: center;
@@ -458,7 +482,7 @@ p4 {
   font-weight: normal;
   font-size: 18px;
   align-items: center;
-  margin:15px;
+  margin:0px;
 }
 
 p5 {
