@@ -76,9 +76,10 @@ div {
   background-color: white;
   width: 97%;
   border: 0px solid blue;
-  height:450px;
+  height:370px;
   margin: 5px;
   margin-bottom: 20px;
+  padding: 0px;
   float: center;
   font-weight: bold;
   text-align:center;
@@ -185,7 +186,7 @@ a.buttonHome {
     background-color: #00ac79;
     border-radius: 2px;
     height: 100px;
-    width: 400px;
+    width: 500px;
     justify-content: center;
     outline: none;
     padding-left: 20px;
