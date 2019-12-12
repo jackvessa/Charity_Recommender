@@ -252,3 +252,24 @@ def get_recs_from_pickled_model(document):
         top_3_sim[document_number] = score
 
     return top_3_sim, loaded_dict
+
+def get_recs_from_pickled_model_search(document):
+    '''
+    '''
+    # load the model from disk
+    loaded_model = pickle.load(open('src/finalized_model.sav', 'rb'))
+    # load the index from disk
+    loaded_index = pickle.load(open('src/finalized_index.sav', 'rb'))
+    # load the dictionary from disk
+    loaded_dict = pickle.load(open('src/finalized_dict.sav', 'rb'))
+
+    query_bow = loaded_dict.doc2bow(document.split())
+
+    sims = loaded_index[loaded_model[query_bow]]
+
+    top_3_sim = dict()
+
+    for document_number, score in sorted(enumerate(sims), key=lambda x: x[1], reverse=True)[1:4]:
+        top_3_sim[document_number] = score
+
+    return top_3_sim, loaded_dict
