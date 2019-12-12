@@ -12,6 +12,7 @@ import tempfile
 charity_df_optimized = pd.read_csv('data/charity_df_optimized.csv')
 charity_navigator_df = pd.read_csv('data/charities_rated_corpus.csv')
 charity_names_list = np.array(charity_navigator_df['name'])
+search = SearchEngine(simple_zipcode=True, db_file_dir="/tmp")
 
 # app object to route calls
 application = Flask(__name__)
@@ -42,8 +43,8 @@ def localrec():
 
             if zipcode is not None and major_category is not None:
 
-                top_recs = recommend_charities(charity_df_optimized,zipcode,major_category)
-                county, state = find_county_and_state(zipcode)
+                top_recs = recommend_charities(charity_df_optimized,zipcode,major_category,search)
+                county, state = find_county_and_state(zipcode, search)
 
                 zip_list, county_list, state_list = [], [], []
                 category_list = []
@@ -78,7 +79,7 @@ def localrec():
 
                     income_code_list.append(str(row.INCOME_CD))
 
-                    score = round(((row.score/40)*100),2)
+                    score = round(((row.score/50)*100),2)
 
                     score_list.append(str(score))
 
@@ -666,6 +667,8 @@ def charitySimilarity():
             <body>
                 <h1>Let's Find Similar Charities!</h1>
 
+                <p style='color:black; text-align: center; font-size: 30px; font-style: italic; font-weight:bold; margin: 3px;'>* Charity Names will Auto-Fill *</p>
+
                 <form autocomplete="off" method="post" enctype="multipart/form-data">
                   <div class="autocomplete">
 
@@ -1082,13 +1085,16 @@ def charitySearch():
               </head>
 
             <body>
-                <h1>Search by Description!</h1>
+                <h1>Keyword Search</h1>
+
+                <p style='color:black; text-align: center; font-size: 30px; font-style: italic; font-weight:bold; margin: 3px;'>* Enter Keywords or Paste a Description *</p>
+
 
                 <form autocomplete="off" method="post" enctype="multipart/form-data">
 
                     <div class="autocomplete">
 
-                     <textarea name="search_text" rows="14" cols="10" wrap="soft" id = 'searchTextArea' placeholder="Describe yourself here..."> </textarea>
+                     <textarea name="search_text" rows="14" cols="10" wrap="soft" id = 'searchTextArea' style='resize:none'> </textarea>
 
                       <p class='zip'><input type="submit" value="Find Similar Charities" /></p>
 

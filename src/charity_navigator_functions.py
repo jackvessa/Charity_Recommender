@@ -269,7 +269,7 @@ def get_recs_from_pickled_model_search(document):
 
     top_3_sim = dict()
 
-    for document_number, score in sorted(enumerate(sims), key=lambda x: x[1], reverse=True)[1:4]:
+    for document_number, score in sorted(enumerate(sims), key=lambda x: x[1], reverse=True)[0:3]:
         top_3_sim[document_number] = score
 
     return top_3_sim, loaded_dict

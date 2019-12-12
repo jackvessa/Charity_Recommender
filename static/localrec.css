@@ -59,8 +59,8 @@ div {
   width: 97%;
   border: 0px solid blue;
   height:50px;
-  margin: 5px;
-  margin-bottom: 20px;
+  margin: 0px;
+  margin-bottom: 0px;
   float: center;
   font-weight: bold;
   text-align:center;
@@ -385,8 +385,8 @@ h1 {
     color:  #00ac79;
     background-color: white;
     border: 0px solid #00ac79;
-    margin: 15px;
-    padding: 15px;
+    margin: 5px;
+    padding: 5px;
     text-align: center;
     font-weight: bold;
     border-radius: 25px;
@@ -604,6 +604,7 @@ a {
    margin-right: 0px;
    margin-bottom: 0px;
    margin-top:0px;
+   padding:0px;
  }
 .cc-selector input{
      margin:0;padding:0;

@@ -5,7 +5,7 @@ import math
 from uszipcode import SearchEngine
 
 
-def find_county_and_state(zipcode):
+def find_county_and_state(zipcode, search):
     '''
     Function
     --------
@@ -20,7 +20,7 @@ def find_county_and_state(zipcode):
     county : county of zipcode
     state : state of zipcode
     '''
-    search = SearchEngine(simple_zipcode=True)
+    search = SearchEngine(simple_zipcode=True, db_file_dir="/tmp")
     result = search.by_zipcode(zipcode)
     county = result.county
     state = result.state
@@ -108,7 +108,7 @@ def search_zip_to_state_major_category(df, zipcode, category):
 
     return temp_df
 
-def add_score_and_sort_df(df,zipcode,zip_factor = 1,county_factor = 1,state_factor=1,top_char=3):
+def add_score_and_sort_df(df,zipcode,search,zip_factor = 2,county_factor = 1,state_factor=1,top_char=3):
     '''
     Function
     --------
@@ -127,7 +127,7 @@ def add_score_and_sort_df(df,zipcode,zip_factor = 1,county_factor = 1,state_fact
     ------
         Filtered Pandas DataFrame
     '''
-    search = SearchEngine(simple_zipcode=True)
+    search = SearchEngine(simple_zipcode=True, db_file_dir="/tmp")
 
     county = search.by_zipcode(zipcode).county
     state = search.by_zipcode(zipcode).state
@@ -142,7 +142,7 @@ def add_score_and_sort_df(df,zipcode,zip_factor = 1,county_factor = 1,state_fact
 
     return temp_df
 
-def recommend_charities(df,zipcode,category,num_rec=3):
+def recommend_charities(df,zipcode,category,search, num_rec=3):
     '''
     Function
     --------
@@ -162,6 +162,6 @@ def recommend_charities(df,zipcode,category,num_rec=3):
     '''
     temp_df = find_major_category(df,category)
 
-    scored_df = add_score_and_sort_df(temp_df,zipcode,top_char=num_rec)
+    scored_df = add_score_and_sort_df(temp_df,zipcode,search,top_char=num_rec)
 
     return scored_df
