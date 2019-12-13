@@ -76,6 +76,8 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 Performing EDA on our data set revealed a few things. They are summarized by the graphs below:
 
+| | |
+|:---:|:---:|
 |![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
 
 |Most Popular Charity Categories|Number of Charities by Income Code|
