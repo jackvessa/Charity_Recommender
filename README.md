@@ -74,17 +74,15 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 # Exploratory Data Analysis
 
-Performing EDA on our data set revealed a few things. They are summarized by the graphs below:
+Performing EDA on our data sets revealed a few things. They are summarized by the graphs below:
 
-| | |
-|:---:|:---:|
+
+
 |![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
-
-|Most Popular Charity Categories|Number of Charities by Income Code|
 |:---:|:---:|
-|![Most Popular Charity Categories](IMG/CN_Categories.png)|![](IMG/NumCharitiesByIncomeCode.png)|
+|![](IMG/CN_Categories.png)|![](IMG/NumCharitiesByIncomeCode.png)|
 
-For further EDA please look at the summary [here](ExploratoryDataAnalysis.md)
+<!-- # For further EDA please look at the summary [here](ExploratoryDataAnalysis.md) -->
 
 <a href="#Charity-Recommender-System">Back to top</a>
 
