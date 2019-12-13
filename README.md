@@ -78,11 +78,11 @@ Performing EDA on our data set revealed a few things. They are summarized by the
 
 |-|-|
 |:---:|:---:|
-|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
+|![Lengths of Charity Descriptions - Used for NLP](IMG/CharityDescCharacterLengths.png)|![Charity Scores, as rated by CharityNavigator.com](IMG/CharityNavScores.png)|
 
 |-|-|
 |:---:|:---:|
-|![](IMG/CN_Categories.png)|![](IMG/NumCharitiesByIncomeCode.png)|
+|![Most Popular Charity Categories](IMG/CN_Categories.png)|![Number of Charities by Income Code](IMG/NumCharitiesByIncomeCode.png)|
 
 For further EDA please look at the summary [here](ExploratoryDataAnalysis.md)
 
