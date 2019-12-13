@@ -78,11 +78,11 @@ Performing EDA on our data set revealed a few things. They are summarized by the
 
 |-|-|
 |:---:|:---:|
-|![](IMG/)|![](IMG/)|
+|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
 
 |-|-|
 |:---:|:---:|
-|![](IMG/)|![](IMG/)|
+|![](IMG/CN_Categories.png)|![](IMG/NumCharitiesByIncomeCode.png)|
 
 For further EDA please look at the summary [here](ExploratoryDataAnalysis.md)
 
