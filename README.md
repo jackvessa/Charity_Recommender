@@ -77,8 +77,8 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 Performing EDA on our data set revealed a few things. They are summarized by the graphs below:
 
 |-|-|
-|:---:|:---:|
-|![Lengths of Charity Descriptions - Used for NLP](IMG/CharityDescCharacterLengths.png)|![Charity Scores, as rated by CharityNavigator.com](IMG/CharityNavScores.png)|
+|Lengths of Charity Descriptions - Used for NLP|:Charity Scores, as rated by CharityNavigator.com:|
+|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
 
 |-|-|
 |:---:|:---:|
