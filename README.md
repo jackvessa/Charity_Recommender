@@ -80,7 +80,7 @@ Performing EDA on our data sets revealed a few things. They are summarized by th
 
 |![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
 |:---:|:---:|
-|![](IMG/CN_Categories.png)|![](IMG/NumCharitiesByIncomeCode.png)|
+|![](IMG/CN_Categories.png)|![](IMG/charityCounts_map.png)|
 
 <!-- # For further EDA please look at the summary [here](ExploratoryDataAnalysis.md) -->
 
