@@ -80,21 +80,9 @@ Performing EDA on our data sets revealed a few things. They are summarized by th
 
 |![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
 |:---:|:---:|
-|Insights:  |Insights: |
+|![](IMG/CN_Categories.png)|![](IMG/NumCharitiesByIncomeCode.png)|
 
-|![Most Popular CharityInsights: Categories](IMG/CN_Categories.png)|![](IMG/NumCharitiesByIncomeCode.png)|
-|:---:|:---:|
-|Insights:  |Insights: |
-
-| | |
-|:---:|:---:|
-|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
-
-|Most Popular Charity Categories|Number of Charities by Income Code|
-|:---:|:---:|
-|![Most Popular Charity Categories](IMG/CN_Categories.png)|![](IMG/NumCharitiesByIncomeCode.png)|
-
-For further EDA please look at the summary [here](ExploratoryDataAnalysis.md)
+<!-- # For further EDA please look at the summary [here](ExploratoryDataAnalysis.md) -->
 
 <a href="#Charity-Recommender-System">Back to top</a>
 
