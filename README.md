@@ -46,6 +46,16 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 |10015091	|HANOVER SOCCER CLUB INC	|NJ	|4	|07927	|Recreation, Sports, Leisure, Athletics	|Morris County|
 
 
+## IRS Dataset - Exploratory Data Analysis
+
+|![]()|![]()|
+|---|---|
+|||
+
+|![]()|![]()|
+|---|---|
+|||
+
 
 ## Second Dataset - Kaggle:
 #### The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset) and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : 
@@ -72,11 +82,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 <a href="#Charity-Recommender-System">Back to top</a>
 
 
-# Exploratory Data Analysis
-
-Performing EDA on our data sets revealed a few things. They are summarized by the graphs below:
-
-
+## Kaggle Dataset - Exploratory Data Analysis
 
 |![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
 |---|---|
