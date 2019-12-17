@@ -2,6 +2,8 @@
 
 Access the web application at [http://www.charityrecommender.com/](http://www.charityrecommender.com/)
 
+![CharityRecommender Homepage](IMG/CR_Homepage.png)
+
 A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## Project Motivation
