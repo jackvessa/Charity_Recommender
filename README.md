@@ -86,11 +86,11 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## Kaggle Dataset - Exploratory Data Analysis
 
-|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
+|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CN_Categories.png)|
 |---|---|
 |The distribution of charity description lengths is left-skewed with a median of 690 characters. These descriptions will serve as the documents to create the TF-IDF vectorizer which will be used to find similarity between charities.|The distribution of charity scores, as ranked by CharityNavigator, is left-skewed with a median of 88.31% These scores are indicators of a charity's financial health and Accountability & Transparency.|
 
-|![](IMG/CN_Categories.png)|![](IMG/charityCounts_map.png)|
+|![](IMG/CharityNavScores.png)|![](IMG/charityCounts_map.png)|
 |---|---|
 |The most common charity category in our database is Human Services, which constitutes 28.32% of charities. The second most common is Arts, Culture, and Humanities at 14.5% followed by Health and Community Development at about 10% each.|Investigating the charities counts by state reveals that New York and California are the most common charity headquarter locations, constituting about 12% of our database each. The next three most-common are Texas, Washington D.C., and Florida at about 5% each.|
 
