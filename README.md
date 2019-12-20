@@ -50,11 +50,11 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## IRS Dataset - Exploratory Data Analysis
 
-|![]()|![]()|
+|![](IMG/NumCharitiesByIncomeCode.png)|![](IMG/Local_Categories.png)|
 |---|---|
 |||
 
-|![]()|![]()|
+|![](IMG/charityCounts_map.png)|![](IMG/CA_Counts_Map.png)|
 |---|---|
 |||
 
