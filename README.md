@@ -50,13 +50,13 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## IRS Dataset - Exploratory Data Analysis
 
-|![]()|![]()|
+|![](IMG/NumCharitiesByIncomeCode.png)|![](IMG/charityCounts_map.png)|
 |---|---|
-|||
+|Charity Income Codes, along with a "locality factor," are used to generate recommendations. This chart shows that the of the charities in the dataset have a code of 3 or 4, with about 8% having a code of 7, 8, or 9|Investigating the charities counts by state reveals that California is the most common charity headquarter location, constituting about 11% of our dataset. The next three most-common are Texas, New York, and Florida at about 7% each.|
 
-|![]()|![]()|
+|![](IMG/Local_Categories.png)|![](IMG/CA_Counts_Map.png)|
 |---|---|
-|||
+|Charity Categories are another factor used for generating recommendations. The most common charity categories in the USA are Religious and Education charities, followed by Human Services, Philanthropy, and Arts, Culture, and Humanities.|This map takes a closer look at the charity distribution in California. Within California, the charitable organizations are centered around The SF Bay Area and Los Angeles. Charities also appear to be more frequent along the coast than inland.|
 
 
 ## Second Dataset - Kaggle:
@@ -86,11 +86,11 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## Kaggle Dataset - Exploratory Data Analysis
 
-|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CharityNavScores.png)|
+|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CN_Categories.png)|
 |---|---|
 |The distribution of charity description lengths is left-skewed with a median of 690 characters. These descriptions will serve as the documents to create the TF-IDF vectorizer which will be used to find similarity between charities.|The distribution of charity scores, as ranked by CharityNavigator, is left-skewed with a median of 88.31% These scores are indicators of a charity's financial health and Accountability & Transparency.|
 
-|![](IMG/CN_Categories.png)|![](IMG/charityCounts_map.png)|
+|![](IMG/CharityNavScores.png)|![](IMG/charityCounts_map.png)|
 |---|---|
 |The most common charity category in our database is Human Services, which constitutes 28.32% of charities. The second most common is Arts, Culture, and Humanities at 14.5% followed by Health and Community Development at about 10% each.|Investigating the charities counts by state reveals that New York and California are the most common charity headquarter locations, constituting about 12% of our database each. The next three most-common are Texas, Washington D.C., and Florida at about 5% each.|
 
