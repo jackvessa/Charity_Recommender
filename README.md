@@ -92,30 +92,37 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 <a href="#Charity-Recommender-System">Back to top</a>
 
 # Local Recommender
-
 <!-- #region -->
-#### To further process our data, the pipeline will:
-- Take a category and zipcode as user input
+#### Steps for Building the Local Recommender:
+- Receive a **category** and **zipcode** as user input
 - Filter charities on selected category
-- Assign a "locality score" to each charity
-  * Income code used as baseline score
-  * Multiply incode by "locality" - based on if charity is in the same zipcode, county, or state
-- Returns the top 3 scored charities as the recommendation to user
+- Assign a **"locality score"** to each charity
+  * **Locality Score = (Income Code * Locality Factor) / 50
+   * *Income code* represents annual income of charity, higher income generally means more established charities
+   * *Locality Factor* represents how "local" the charity is to the user, determnined zipcode, county, or state match
+   * 50 Represents the maximum score, and is used to convert from a score to a percentage
+ - The **Top 3** highest-scoring charities are recommended to the user
 
-#### The code to do this can be found [here](src/Charity_Recommender_Functions.py)
+![LocalSelector](IMG/CA_Local_Selector.png)
+![LocalRecommendations](IMG/CA_Local_Recs.png)
+
+#### The code to do this can be found [here](src/Local_Charity_Recommender_Notebook.ipynb)
 
 # Similar Recommender
-
 <!-- #region -->
-#### To further process our data, the pipeline will:
-- Take a charity name as user input
-- Use an LDA model to create a "similarity score" for that charity compared to all other charities in database
-  * Compares keyword usage and similarity among charity categories, descriptions, mottos, and states
-- Returns the top 3 similarity scored charities as the recommendation to user
+#### Steps for Building the Similar Recommender:
+- Receive a **charity name** as user input
+- Access CharityNavigator database to refer to that charity's information (category, description, and motto)
+- Compare that charity's information to the TF-IDF model of charities in our database to generate **"similarity scores"**
+  * **TF-IDF** stands for **Term Frequency - Inverse Term Frequency**
+  * *Term Frequency* refers to how frequently a word from on document occurs in another document
+  * *Inverse Term Frequency* refers to how important a given word is in creating a match, determined by "rarity" of word usage
+- The **Top 3** highest similarity-scoring charities are recommended to the user
 
-#### The code to do this can be found [here](src/charity_navigator_functions.py)
+![SimilarSelector](IMG/Ed_Search.png)
+![SimilarRecommendations](IMG/Ed_Recs.png)
 
-![](IMG/)
+#### The code to do this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
 
 <a href="#Charity-Recommender-System">Back to top</a>
 <!-- #endregion -->
