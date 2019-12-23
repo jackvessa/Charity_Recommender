@@ -18,8 +18,8 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 # Table of Contents
 - [Overview of the Data](#Overview-of-the-Data)
 - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
-- [Data Pipeline](#Data-Pipeline)
-- [Model Selection](#Model-Selection)
+- [Local Recommender](#Model-Selection)
+- [Similar Recommender](#Similar-Recommender)
 - [Wordclouds](#WordClouds)
 - [Conclusion and Next Steps](#Conclusion-and-Next-Steps)
 
@@ -91,7 +91,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 <a href="#Charity-Recommender-System">Back to top</a>
 
-# Local Charity Recommender
+# Local Recommender
 
 <!-- #region -->
 #### To further process our data, the pipeline will:
@@ -104,7 +104,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 #### The code to do this can be found [here](src/Charity_Recommender_Functions.py)
 
-# Data Set 2 Pipeline - Similar Charity Recommender
+# Similar Recommender
 
 <!-- #region -->
 #### To further process our data, the pipeline will:
