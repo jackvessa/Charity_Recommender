@@ -34,7 +34,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
   * Keep charities that offer fully tax deductible donations and have an NTEE Category Code
   * Translate NTEE code into category column and keep essential column features
 - Cleaned Data Set
- * 992,318 charities (rows) with 10 features for each charity (columns)
+  * 992,318 charities (rows) with 10 features for each charity (columns)
 
 #### Preview of IRS Data Set:
 
@@ -64,7 +64,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 - Data Cleaning:
   * Create "corpus" column that contains information about charity category, description, motto, and state
 - Cleaned Data Set
- * 8,400 charities (rows) with 8 features for each charity (columns)
+  * 8,400 charities (rows) with 8 features for each charity (columns)
 
 #### Preview of CharityNavigator Data Set:
 
