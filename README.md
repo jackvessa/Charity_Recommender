@@ -103,9 +103,9 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
    * 50 Represents the maximum score, and is used to convert from a score to a percentage
  - The **Top 3** highest-scoring charities are recommended to the user
 
-## Selecting User-Inputs for Local Recommendations
+## 
 ![LocalSelector](IMG/CA_Local_Selector.png)
-## Local Charity Recommendations
+## 
 ![LocalRecommendations](IMG/CA_Local_Recs.png)
 
 #### The code to do this can be found [here](src/Local_Charity_Recommender_Notebook.ipynb)
@@ -121,9 +121,9 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
   * *Inverse Term Frequency* refers to how important a given word is in creating a match, determined by "rarity" of word usage
 - The **Top 3** highest similarity-scoring charities are recommended to the user
 
-## Selecting User-Inputs for Similar Recommendations
+## 
 ![SimilarSelector](IMG/Ed_Search.png)
-## Similar Charity Recommendations
+## 
 ![SimilarRecommendations](IMG/Ed_Recs.png)
 
 #### The code to do this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
