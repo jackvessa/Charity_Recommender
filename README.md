@@ -7,13 +7,13 @@ Access the web application at [http://www.charityrecommender.com/](http://www.ch
 A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## Project Motivation
-- Charitable organizations improve our society
-- These organizations allocate resources to promote academic success, combat global catastrophes, and support countless other noble causes
-- The motivation for this project stems from a passion to support charitable organizations and connect donors to new charities
+- This project was motivated by the desire to connect people with charitable organizations in their communities.
+- Recommending charities for people to donate their time or resources to can transform communities and positively change lives.
 
 ## Goals:
-- Recommend local charities from a user-inputted category and zipcode
-- Build a recommendation system to recommend charities that are similar to user-selected charity
+- Recommend local charities from a user-selected category and zipcode
+- Recommend similar charities to a user-selected charity
+- Recommend charities that match a keyword search or description
 
 # Table of Contents
 - [Overview of the Data](#Overview-of-the-Data)
@@ -29,15 +29,12 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 #### The first dataset comes from [IRS.gov](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf) and contains information about charitable organizations in the United States
 
 - Original Data Set
-  * 1,719,673 charities (rows)
-  * 28 features for each charity (columns)
+  * 1,719,673 charities (rows) with 28 features for each charity (columns)
 - Data Cleaning:
   * Keep charities that offer fully tax deductible donations and have an NTEE Category Code
-  * Translate NTEE code into category column
-  * Keep essential column features
+  * Translate NTEE code into category column and keep essential column features
 - Cleaned Data Set
- * 992,318 charities (rows)
- * 10 features for each charity (columns)
+ * 992,318 charities (rows) with 10 features for each charity (columns)
 
 #### Preview of IRS Data Set:
 
@@ -59,21 +56,17 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 |Charity Categories are another factor used for generating recommendations. The most common charity categories in the USA are Religious and Education charities, followed by Human Services, Philanthropy, and Arts, Culture, and Humanities.|This map takes a closer look at the charity distribution in California. Within California, the charitable organizations are centered around The SF Bay Area and Los Angeles. Charities also appear to be more frequent along the coast than inland.|
 
 
-## Second Dataset - Kaggle:
-#### The second dataset comes from [Kaggle](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset) and contains information about charities rated by [CharityNavigator.org](https://www.charitynavigator.org/) : 
+## Second Dataset - CharityNavigator:
+#### The second dataset comes from [CharityNavigator.org](https://www.charitynavigator.org/) and contains detailed charity information including description, motto, and overall score. The data is availble [Here](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset).
 
 - Original Data Set
-  * 8,400 charities (rows)
-  * 20 features for each charity (columns)
+  * 8,400 charities (rows) with 20 features for each charity (columns)
 - Data Cleaning:
-  * Keep all charities
-  * Keep essential column features
   * Create "corpus" column that contains information about charity category, description, motto, and state
 - Cleaned Data Set
- * 8,400 charities (rows)
- * 8 features for each charity (columns)
+ * 8,400 charities (rows) with 8 features for each charity (columns)
 
-#### Preview of Kaggle Data Set:
+#### Preview of CharityNavigator Data Set:
 
 | name	|ein	|category	|description	|motto	|score	|state
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -84,7 +77,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 <a href="#Charity-Recommender-System">Back to top</a>
 
 
-## Kaggle Dataset - Exploratory Data Analysis
+## CharityNavigator Dataset - Exploratory Data Analysis
 
 |![](IMG/CharityDescCharacterLengths.png)|![](IMG/CN_Categories.png)|
 |---|---|
@@ -98,7 +91,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 <a href="#Charity-Recommender-System">Back to top</a>
 
-# Data Set 1 Pipeline - Local Charity Recommender
+# Local Charity Recommender
 
 <!-- #region -->
 #### To further process our data, the pipeline will:
