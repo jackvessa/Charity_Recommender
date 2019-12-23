@@ -18,7 +18,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 # Table of Contents
 - [Overview of the Data](#Overview-of-the-Data)
 - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
-- [Local Recommender](#Model-Selection)
+- [Local Recommender](#Local-Recommender)
 - [Similar Recommender](#Similar-Recommender)
 - [Wordclouds](#WordClouds)
 - [Conclusion and Next Steps](#Conclusion-and-Next-Steps)
