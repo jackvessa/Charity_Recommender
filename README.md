@@ -131,10 +131,13 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 <a href="#Charity-Recommender-System">Back to top</a>
 <!-- #endregion -->
 
-# Model Selection
+# Scoring the Similar Recommendation Model
+The **two criteria** used to score the similar recommendation model are **category match** and **similar word match**.
 
-The Charity Navigator Dataset contains 11 categories. Recommending one of these categories at random would result in the same category  getting recommended 9.09% of the time. The goal for the recommendation model is to improve this score to above 50%.
-The code for this can be found [here](src/Charity_Navigator_LDA_Similarity.ipynb)
+The CharityNavigator Dataset contains 11 categories. Recommending one of these categories at random would result in the same category  getting recommended 9.09% of the time, which will be the baseline for the model. The goal for the recommendation model is to improve this score to above 50%.
+
+
+<!-- The code for this can be found [here]() -->
 
 We will use Latent Dirichlet Allocation:
 -                   - Accuracy = 30.00%
@@ -142,6 +145,8 @@ We will use Latent Dirichlet Allocation:
 -                   - Accuracy = 50.00%
 -                   - Accuracy = 60.00%
 -                   - Accuracy = 70.00%
+
+
 
 <a href="#Charity-Recommender-System">Back to top</a>
 
@@ -151,13 +156,14 @@ We will use Latent Dirichlet Allocation:
 
 # Deployment
 
-Web Application Deployed on an Amazon EC2 Instance
+Web Application Deployed on an Amazon Web Services via Elastic Beanstalk at [http://www.charityrecommender.com/](http://www.charityrecommender.com/)
 
 ## Built With
 
 * [Python](https://www.python.org/) - Coding Language for Machine Learning Application
 * [Gensim](https://radimrehurek.com/gensim/index.html) - Used for Latent Dirichlet Allocation - Topic Modeling
 * [Flask](http://flask.palletsprojects.com/en/1.1.x/) - Framework for Creating the Web Application
+* [Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) - Service for Deploying Web Applications
 
 
 ## Author
