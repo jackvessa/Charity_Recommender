@@ -136,6 +136,10 @@ The **two criteria** used to score the similar recommendation model are **catego
 
 The CharityNavigator Dataset contains 11 categories. Recommending one of these categories at random would result in the same category  getting recommended 9.09% of the time, which will be the baseline for the model. The goal for the recommendation model is to improve this score to above 50%.
 
+|![](IMG/CategoryScores.png)|![](IMG/SimilarityScores.png)|
+|---|---|
+|||
+
 
 <!-- The code for this can be found [here]() -->
 
