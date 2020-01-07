@@ -132,7 +132,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 <!-- #endregion -->
 
 # Scoring the Similar Recommendation Model
-The **two criteria** used to score the similar recommendation model are **category match** and **similar word match**.
+The **two criteria** used to score the similar recommendation model are **Category Scores** and **Similar Scores**.
 
 The CharityNavigator Dataset contains 11 categories. Recommending one of these categories at random would result in the same category  getting recommended 9.09% of the time, which will be the baseline for the model. The goal for the recommendation model is to improve this score to above 50%.
 
@@ -142,14 +142,6 @@ The CharityNavigator Dataset contains 11 categories. Recommending one of these c
 
 
 <!-- The code for this can be found [here]() -->
-
-We will use Latent Dirichlet Allocation:
--                   - Accuracy = 30.00%
--                   - Accuracy = 40.00%
--                   - Accuracy = 50.00%
--                   - Accuracy = 60.00%
--                   - Accuracy = 70.00%
-
 
 
 <a href="#Charity-Recommender-System">Back to top</a>
