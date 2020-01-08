@@ -134,7 +134,9 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 # Scoring the Similar Recommendation Model
 The **two criteria** used to score the similar recommendation model are **Category Scores** and **Similar Scores**.
 
-The CharityNavigator Dataset contains 11 categories. Recommending one of these categories at random would result in the same category  getting recommended 9.09% of the time, which will be the baseline for the model. The goal for the recommendation model is to improve this score to above 50%.
+The CharityNavigator Dataset contains 11 categories. Recommending one of these categories at random would result in the same category  getting recommended 1/11 or 9.09% of the time, which will be the baseline for the model. The goal for the recommendation model is to improve category score to above 50%.
+
+The Similar Scores are calculated using the cosine similarity of the TF-IDF vector representations between documents. The three highest similarly scored documents will be returned as the top 3 recommended charities. 
 
 |![](IMG/CategoryScores.png)|![](IMG/SimilarityScores.png)|
 |---|---|
