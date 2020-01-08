@@ -1,5 +1,4 @@
 # Charity Recommender
-<p style="text-align: center;"> CharityRecommender </p>
 
 Access the web application at [http://www.charityrecommender.com/](http://www.charityrecommender.com/)
 
