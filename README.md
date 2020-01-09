@@ -182,10 +182,6 @@ Find your next great cause to donate to today!
 * [Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) - Service for Deploying Web Applications
 
 
-## Author
-
-* **Jack Vessa** 
-
 ## Acknowledgments
 
 * Thank you to those that support charitable organizations and help to make our world a better place
