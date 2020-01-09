@@ -155,6 +155,7 @@ Increasing the minimum word count and the maximum percent exclusion will also de
 
 The optimal hyperparameters for this model are 4 minimum words and 24% maximum percentage exclusion, which results in a category score of 70.1% and a similarity of score of 34.8%
 
+
 |![](IMG/CharityTokens.png)|![]()|
 |---|---|
 |The distribution of token amounts for each charity is normally distibuted with a mean of 35 tokens. These tokens are the unique words that represent each charity and are used by the model to recomend similar charities.||
@@ -167,11 +168,11 @@ The optimal hyperparameters for this model are 4 minimum words and 24% maximum p
 
 
 # Conclusion and Next Steps
+Charity Recommender is a functional web application and be be accessed at [www.charityrecommender.com/](http://www.charityrecommender.com/)
+Next steps for this project include adding more charities to the corpus and integrating recommendation features with [www.givz.com/](https://givz.com/)
 
+Find your next great cause to donate to today!
 
-# Deployment
-
-Web Application Deployed on an Amazon Web Services via Elastic Beanstalk at [http://www.charityrecommender.com/](http://www.charityrecommender.com/)
 
 ## Built With
 
