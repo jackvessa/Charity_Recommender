@@ -126,7 +126,7 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 ## 
 ![SimilarRecommendations](IMG/Ed_Recs.png)
 
-#### The code to do this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
+#### The code for this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
 
 <a href="#Charity-Recommender-System">Back to top</a>
 <!-- #endregion -->
@@ -140,12 +140,27 @@ The CharityNavigator Dataset contains 11 categories. Recommending one of these c
 #### Similarity Scores
 The Similarity Scores are calculated using the cosine similarity of the TF-IDF vector representations between documents. The three highest similarly scored documents will be returned as the top 3 recommended charities. 
 
+#### Hyperparameter Tuning
+The two hyperparameters of interest in tuning the model are **minimum word** count and **maximum percent** exclusion of words. 
+
+**Minimum word** counts refers to the minimum number of documents a word must appear in to be featured in the model.
+
+**Maximum percent** exclusion refers to the maximum percentage of documents a word can appear in before it is excluded. For example, a maximum percent of 25% means that a word cannot appear in more than 25% of documents.
+
+Increasing the minimum word count and the maximum percent exclusion will also decrease the number of tokens (words) used to analyze charities and make similarity recommendations. The hypertuning of this model will seek to balance the optimization of category and similarity scores with the loss of tokens from the corpus. 
+
 |![](IMG/CategoryScores.png)|![](IMG/SimilarityScores.png)|
 |---|---|
-|||
+|The category scores increase as the maximum percentage excluded and minimum word count increases. However, the score increase starts to plateau at 24% maximum percentage exclusion while offering only marginal increases after 4 minimum words.|The similarity scores also generally increase as the maximum percentage exclusion increases and minimum word counts increases. There is a significant increase in similarity scores from 0 to 4 minimum words, with marginal increases after 4 minimum words.|
+
+The optimal hyperparameters for this model are 4 minimum words and 24% maximum percentage exclusion, which results in a category score of 70.1% and a similarity of score of 34.8%
+
+|![](IMG/CharityTokens.png)|![]()|
+|---|---|
+|The distribution of token amounts for each charity is normally distibuted with a mean of 35 tokens. These tokens are the unique words that represent each charity and are used by the model to recomend similar charities.||
 
 
-<!-- The code for this can be found [here]() -->
+#### The code for this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
 
 
 <a href="#Charity-Recommender-System">Back to top</a>
