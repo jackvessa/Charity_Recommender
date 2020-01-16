@@ -4,6 +4,9 @@ Access the web application at [http://www.charityrecommender.com/](http://www.ch
 
 ![CharityRecommender Homepage](IMG/CR_Homepage.png)
 
+|![CharityRecommender Homepage](IMG/CR_Homepage.png)|
+|---|
+
 A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## Project Motivation
@@ -83,9 +86,9 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 |---|---|
 |The distribution of charity description lengths is left-skewed with a median of 690 characters. These descriptions will serve as the documents to create the TF-IDF vectorizer which will be used to find similarity between charities.|The distribution of charity scores, as ranked by CharityNavigator, is left-skewed with a median of 88.31% These scores are indicators of a charity's financial health and Accountability & Transparency.|
 
-|![](IMG/CharityNavScores.png)|![](IMG/charityCounts_map.png)|
+|![](IMG/CharityNavScores.png)|![](IMG/AVG_Score_By_Category.png)|
 |---|---|
-|The most common charity category in our database is Human Services, which constitutes 28.32% of charities. The second most common is Arts, Culture, and Humanities at 14.5% followed by Health and Community Development at about 10% each.|Investigating the charities counts by state reveals that New York and California are the most common charity headquarter locations, constituting about 12% of our database each. The next three most-common are Texas, Washington D.C., and Florida at about 5% each.|
+|The most common charity category in our database is Human Services, which constitutes 28.32% of charities. The second most common is Arts, Culture, and Humanities at 14.5% followed by Health and Community Development at about 10% each.|Investigating the mean charity score by category reveals that Community Development, Animal, and Environmental charities are the most highly rated. The lowest rated charity categories, on average, are Religion, Research & Public Policy, and Arts, Culture, & Humanities.|
 
 <!-- # For further EDA please look at the summary [here](ExploratoryDataAnalysis.md) -->
 
@@ -156,9 +159,9 @@ Increasing the minimum word count and the maximum percent exclusion will also de
 The optimal hyperparameters for this model are 4 minimum words and 24% maximum percentage exclusion, which results in a category score of 70.1% and a similarity of score of 34.8%
 
 
-|![](IMG/CharityTokens.png)|![]()|
+|![](IMG/CharityTokens.png)|![](IMG/JaccardSim.png)|
 |---|---|
-|The distribution of token amounts for each charity is normally distibuted with a mean of 35 tokens. These tokens are the unique words that represent each charity and are used by the model to recomend similar charities.||
+|The distribution of token amounts for each charity is normally distibuted with a mean of 45 tokens. These tokens are the unique words that represent each charity and are used by the model to compare and recommend similar charities.|The Jaccard Similarity graph shows the similarity, or overlap, across topics at various topic amounts used by the LDA model. Based on this model, 15 topics is optimal for breaking the corpus into coherent topics with only 5.64% mean topic overlap|
 
 
 #### The code for this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
