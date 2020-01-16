@@ -112,16 +112,26 @@ The two hyperparameters of interest in tuning the model are **minimum word** cou
 
 Increasing the minimum word count and the maximum percent exclusion will also decrease the number of tokens (words) used to analyze charities and make similarity recommendations. The hypertuning of this model will seek to balance the optimization of category and similarity scores with the loss of tokens from the corpus. 
 
-|![](IMG/CategoryScores.png)|![](IMG/SimilarityScores.png)|
-|---|---|
-|The category scores increase as the maximum percentage excluded and minimum word count increases. However, the score increase starts to plateau at 24% maximum percentage exclusion while offering only marginal increases after 4 minimum words.|The similarity scores also generally increase as the maximum percentage exclusion increases and minimum word counts increases. There is a significant increase in similarity scores from 0 to 4 minimum words, with marginal increases after 4 minimum words.|
+|![](IMG/CategoryScores.png)|
+|---|
+|The category scores increase as the maximum percentage excluded and minimum word count increases. However, the score increase starts to plateau at 24% maximum percentage exclusion while offering only marginal increases after 4 minimum words.|
+
+|![](IMG/SimilarityScores.png)|
+|---|
+|The similarity scores also generally increase as the maximum percentage exclusion increases and minimum word counts increases. There is a significant increase in similarity scores from 0 to 4 minimum words, with marginal increases after 4 minimum words.|
+
 
 The optimal hyperparameters for this model are 4 minimum words and 24% maximum percentage exclusion, which results in a category score of 70.1% and a similarity of score of 34.8%
 
 
-|![](IMG/CharityTokens.png)|![](IMG/JaccardSim.png)|
+|![](IMG/CharityTokens.png)|
 |---|---|
-|The distribution of token amounts for each charity is normally distibuted with a mean of 45 tokens. These tokens are the unique words that represent each charity and are used by the model to compare and recommend similar charities.|The Jaccard Similarity graph shows the similarity, or overlap, across topics at various topic amounts used by the LDA model. Based on this model, 15 topics is optimal for breaking the corpus into coherent topics with only 5.64% mean topic overlap|
+|The distribution of token amounts for each charity is normally distibuted with a mean of 45 tokens. These tokens are the unique words that represent each charity and are used by the model to compare and recommend similar charities.|
+
+|![](IMG/JaccardSim.png)|
+|---|
+|The Jaccard Similarity graph shows the similarity, or overlap, across topics at various topic amounts used by the LDA model. Based on this model, 15 topics is optimal for breaking the corpus into coherent topics with only 5.64% mean topic overlap|
+
 
 
 #### The code for this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
