@@ -84,10 +84,12 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 ## 
 |![SimilarSelector](IMG/Ed_Search.png)|
 |---|
+|The Similar Charity Recommender webpage features an autofill feature to find charities in the database, coded in Javascript.|
 
 ## 
 |![SimilarRecommendations](IMG/Ed_Recs.png)|
 |---|
+|The top three most similar charities are recommended by the model. The table below each recommendation shows the similarity score, CharityNavigator rating, and top keywords used in matching the charities.|
 
 #### The code for this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
 
@@ -104,34 +106,32 @@ The CharityNavigator Dataset contains 11 categories. Recommending one of these c
 The Similarity Scores are calculated using the cosine similarity of the TF-IDF vector representations between documents. The three highest similarly scored documents will be returned as the top 3 recommended charities. 
 
 #### Hyperparameter Tuning
-The two hyperparameters of interest in tuning the model are **minimum word** count and **maximum percent** exclusion of words. 
+The two hyperparameters used to tune the model are **minimum document count** and **maximum document percentage** 
 
-**Minimum word** counts refers to the minimum number of documents a word must appear in to be featured in the model.
+**Minimum Document Count** refers to the minimum number of documents a word must appear in to be included as a token in the model.
 
-**Maximum percent** exclusion refers to the maximum percentage of documents a word can appear in before it is excluded. For example, a maximum percent of 25% means that a word cannot appear in more than 25% of documents.
+**Maximum Document Percentage** refers to the maximum percentage of documents a word can appear in before it is excluded. For example, a 30% maximum percentage indicates that a word cannot appear in more than 30% of documents.
 
-Increasing the minimum word count and the maximum percent exclusion will also decrease the number of tokens (words) used to analyze charities and make similarity recommendations. The hypertuning of this model will seek to balance the optimization of category and similarity scores with the loss of tokens from the corpus. 
+Increasing the minimum document count and the maximum document percentage will also decrease the number of tokens (words) used to analyze charities and make similarity recommendations. The hypertuning of this model will seek to balance the optimization of category and similarity scores with the loss of tokens from the corpus. 
 
 |![](IMG/CategoryScores.png)|
 |---|
-|The category scores increase as the maximum percentage excluded and minimum word count increases. However, the score increase starts to plateau at 24% maximum percentage exclusion while offering only marginal increases after 4 minimum words.|
+|The category scores graph shows that the category scores fluctuate at various minimum document counts; increasing to an initial spike, dropping sharply, and then gradually increasing again. The optimal parameters for category score are 4 minimum documents and 30% max documents, with a category score of 72.59%|
 
 |![](IMG/SimilarityScores.png)|
 |---|
-|The similarity scores also generally increase as the maximum percentage exclusion increases and minimum word counts increases. There is a significant increase in similarity scores from 0 to 4 minimum words, with marginal increases after 4 minimum words.|
+|The similarity scores are fairly consistent across minimum document counts but vary greatly as maximum document percent changes. Using the 4 minimum documents and 30% max documents parameters from the tuned category score results in a similarity score of 37.71%|
 
 
-The optimal hyperparameters for this model are 4 minimum words and 24% maximum percentage exclusion, which results in a category score of 70.1% and a similarity of score of 34.8%
-
+#### Creating the Latent Dirichlet Allocation (LDA) Model
 
 |![](IMG/CharityTokens.png)|
 |---|
-|The distribution of token amounts for each charity is normally distibuted with a mean of 45 tokens. These tokens are the unique words that represent each charity and are used by the model to compare and recommend similar charities.|
+|The distribution of token amounts for each charity is normally distibuted with a mean of 45 tokens. These tokens are the unique words that represent each charity and are used by the model to compare and recommend similar charities. Tuning the model to 4 minimum document counts and 30% maximum documents trimmed the unique tokens in the model from 21799 to 6430 tokens.|
 
 |![](IMG/JaccardSim.png)|
 |---|
 |The Jaccard Similarity graph shows the similarity, or overlap, across topics at various topic amounts used by the LDA model. Based on this model, 15 topics is optimal for breaking the corpus into coherent topics with only 5.64% mean topic overlap|
-
 
 
 #### The code for this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
