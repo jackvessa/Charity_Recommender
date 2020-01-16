@@ -50,13 +50,21 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 ## CharityNavigator Dataset - Exploratory Data Analysis
 
-|![](IMG/CharityDescCharacterLengths.png)|![](IMG/CN_Categories.png)|
-|---|---|
-|The distribution of charity description lengths is left-skewed with a median of 690 characters. These descriptions will serve as the documents to create the TF-IDF vectorizer which will be used to find similarity between charities.|The distribution of charity scores, as ranked by CharityNavigator, is left-skewed with a median of 88.31% These scores are indicators of a charity's financial health and Accountability & Transparency.|
+|![](IMG/CharityDescCharacterLengths.png)|
+|---|
+|The distribution of charity description lengths is left-skewed with a median of 690 characters. These descriptions will serve as the documents to create the TF-IDF vectorizer which will be used to find similarity between charities.|
 
-|![](IMG/CharityNavScores.png)|![](IMG/AVG_Score_By_Category.png)|
-|---|---|
-|The most common charity category in our database is Human Services, which constitutes 28.32% of charities. The second most common is Arts, Culture, and Humanities at 14.5% followed by Health and Community Development at about 10% each.|Investigating the mean charity score by category reveals that Community Development, Animal, and Environmental charities are the most highly rated. The lowest rated charity categories, on average, are Religion, Research & Public Policy, and Arts, Culture, & Humanities.|
+|![](IMG/CN_Categories.png)|
+|---|
+|The distribution of charity scores, as ranked by CharityNavigator, is left-skewed with a median of 88.31% These scores are indicators of a charity's financial health and Accountability & Transparency.|
+
+|![](IMG/CharityNavScores.png)|
+|---|
+|The most common charity category in our database is Human Services, which constitutes 28.32% of charities. The second most common is Arts, Culture, and Humanities at 14.5% followed by Health and Community Development at about 10% each.|
+
+|![](IMG/AVG_Score_By_Category.png)|
+|---|
+|Investigating the mean charity score by category reveals that Community Development, Animal, and Environmental charities are the most highly rated. The lowest rated charity categories, on average, are Religion, Research & Public Policy, and Arts, Culture, & Humanities.|
 
 <!-- # For further EDA please look at the summary [here](ExploratoryDataAnalysis.md) -->
 
