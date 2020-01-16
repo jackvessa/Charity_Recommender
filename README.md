@@ -125,7 +125,7 @@ The optimal hyperparameters for this model are 4 minimum words and 24% maximum p
 
 
 |![](IMG/CharityTokens.png)|
-|---|---|
+|---|
 |The distribution of token amounts for each charity is normally distibuted with a mean of 45 tokens. These tokens are the unique words that represent each charity and are used by the model to compare and recommend similar charities.|
 
 |![](IMG/JaccardSim.png)|
@@ -162,13 +162,22 @@ The optimal hyperparameters for this model are 4 minimum words and 24% maximum p
 
 ## IRS Dataset - Exploratory Data Analysis
 
-|![](IMG/NumCharitiesByIncomeCode.png)|![](IMG/charityCounts_map.png)|
-|---|---|
-|Charity Income Codes, along with a "locality factor," are used to generate recommendations. This chart shows that the of the charities in the dataset have a code of 3 or 4, with about 8% having a code of 7, 8, or 9|Investigating the charities counts by state reveals that California is the most common charity headquarter location, constituting about 11% of our dataset. The next three most-common are Texas, New York, and Florida at about 7% each.|
+|![](IMG/NumCharitiesByIncomeCode.png)|
+|---|
+|Charity Income Codes, along with a "locality factor," are used to generate recommendations. This chart shows that the of the charities in the dataset have a code of 3 or 4, with about 8% having a code of 7, 8, or 9|
 
-|![](IMG/Local_Categories.png)|![](IMG/CA_Counts_Map.png)|
-|---|---|
-|Charity Categories are another factor used for generating recommendations. The most common charity categories in the USA are Religious and Education charities, followed by Human Services, Philanthropy, and Arts, Culture, and Humanities.|This map takes a closer look at the charity distribution in California. Within California, the charitable organizations are centered around The SF Bay Area and Los Angeles. Charities also appear to be more frequent along the coast than inland.|
+|![](IMG/charityCounts_map.png)|
+|---|
+|Investigating the charities counts by state reveals that California is the most common charity headquarter location, constituting about 11% of our dataset. The next three most-common are Texas, New York, and Florida at about 7% each.|
+
+
+|![](IMG/Local_Categories.png)|
+|---|
+|Charity Categories are another factor used for generating recommendations. The most common charity categories in the USA are Religious and Education charities, followed by Human Services, Philanthropy, and Arts, Culture, and Humanities.|
+
+|![](IMG/CA_Counts_Map.png)|
+|---|
+|This map takes a closer look at the charity distribution in California. Within California, the charitable organizations are centered around The SF Bay Area and Los Angeles. Charities also appear to be more frequent along the coast than inland.|
 
 
 # Local Recommender
@@ -196,8 +205,8 @@ The optimal hyperparameters for this model are 4 minimum words and 24% maximum p
 
 
 # Conclusion and Next Steps
-Charity Recommender is a functional web application and be be accessed at [www.charityrecommender.com/](http://www.charityrecommender.com/)
-Next steps for this project include adding more charities to the corpus and integrating recommendation features with [www.givz.com/](https://givz.com/)
+- Charity Recommender is a functional web application and be be accessed at [www.charityrecommender.com/](http://www.charityrecommender.com/)
+- Next steps for this project include adding more charities to the corpus and integrating recommendation features with [www.givz.com/](https://givz.com/)
 
 Find your next great cause to donate to today!
 
