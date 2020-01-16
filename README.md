@@ -2,8 +2,6 @@
 
 Access the web application at [http://www.charityrecommender.com/](http://www.charityrecommender.com/)
 
-![CharityRecommender Homepage](IMG/CR_Homepage.png)
-
 |![CharityRecommender Homepage](IMG/CR_Homepage.png)|
 |---|
 
@@ -14,53 +12,23 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 - Recommending charities for people to donate their time or resources to can transform communities and positively change lives.
 
 ## Goals:
-- Recommend local charities from a user-selected category and zipcode
 - Recommend similar charities to a user-selected charity
+- Recommend local charities from a user-selected category and zipcode
 - Recommend charities that match a keyword search or description
 
 # Table of Contents
 - [Overview of the Data](#Overview-of-the-Data)
 - [Exploratory Data Analysis](#Exploratory-Data-Analysis)
-- [Local Recommender](#Local-Recommender)
+<!-- - [Wordclouds](#WordClouds) -->
 - [Similar Recommender](#Similar-Recommender)
-- [Wordclouds](#WordClouds)
+- [Local Recommender](#Local-Recommender)
 - [Conclusion and Next Steps](#Conclusion-and-Next-Steps)
+
 
 # Overview of the Data
 
-## First Dataset - IRS:
-#### The first dataset comes from [IRS.gov](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf) and contains information about charitable organizations in the United States
-
-- Original Data Set
-  * 1,719,673 charities (rows) with 28 features for each charity (columns)
-- Data Cleaning:
-  * Keep charities that offer fully tax deductible donations and have an NTEE Category Code
-  * Translate NTEE code into category column and keep essential column features
-- Cleaned Data Set
-  * 992,318 charities (rows) with 10 features for each charity (columns)
-
-#### Preview of IRS Data Set:
-
-| EIN | NAME | STATE |INCOME_CD | ZIP_FIVE	 | NTEE_Major_Category	 |  County |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|10130427	|BRIDGTON HOSPITAL	|ME	|9	|04009	|Health - General and Rehabilitative	|Cumberland County|
-|10024645	|BANGOR SYMPHONY ORCHESTRA	|ME	|6	|04402	|Arts, Culture and Humanities	|Penobscot County|
-|10015091	|HANOVER SOCCER CLUB INC	|NJ	|4	|07927	|Recreation, Sports, Leisure, Athletics	|Morris County|
-
-
-## IRS Dataset - Exploratory Data Analysis
-
-|![](IMG/NumCharitiesByIncomeCode.png)|![](IMG/charityCounts_map.png)|
-|---|---|
-|Charity Income Codes, along with a "locality factor," are used to generate recommendations. This chart shows that the of the charities in the dataset have a code of 3 or 4, with about 8% having a code of 7, 8, or 9|Investigating the charities counts by state reveals that California is the most common charity headquarter location, constituting about 11% of our dataset. The next three most-common are Texas, New York, and Florida at about 7% each.|
-
-|![](IMG/Local_Categories.png)|![](IMG/CA_Counts_Map.png)|
-|---|---|
-|Charity Categories are another factor used for generating recommendations. The most common charity categories in the USA are Religious and Education charities, followed by Human Services, Philanthropy, and Arts, Culture, and Humanities.|This map takes a closer look at the charity distribution in California. Within California, the charitable organizations are centered around The SF Bay Area and Los Angeles. Charities also appear to be more frequent along the coast than inland.|
-
-
-## Second Dataset - CharityNavigator:
-#### The second dataset comes from [CharityNavigator.org](https://www.charitynavigator.org/) and contains detailed charity information including description, motto, and overall score. The data is availble [Here](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset).
+## First Dataset - CharityNavigator:
+#### The first dataset comes from [CharityNavigator.org](https://www.charitynavigator.org/) and contains detailed charity information including description, motto, and overall score. The data is availble [Here](https://www.kaggle.com/katyjqian/charity-navigator-scores-expenses-dataset).
 
 - Original Data Set
   * 8,400 charities (rows) with 20 features for each charity (columns)
@@ -94,25 +62,6 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 
 <a href="#Charity-Recommender-System">Back to top</a>
 
-# Local Recommender
-<!-- #region -->
-#### Steps for Building the Local Recommender:
-- Receive a **category** and **zipcode** as user input
-- Filter charities on selected category
-- Assign a **"locality score"** to each charity
-  * **Locality Score = (Income Code * Locality Factor) / 50
-   * *Income code* represents annual income of charity, higher income generally means more established charities
-   * *Locality Factor* represents how "local" the charity is to the user, determnined zipcode, county, or state match
-   * 50 Represents the maximum score, and is used to convert from a score to a percentage
- - The **Top 3** highest-scoring charities are recommended to the user
-
-## 
-![LocalSelector](IMG/CA_Local_Selector.png)
-## 
-![LocalRecommendations](IMG/CA_Local_Recs.png)
-
-#### The code to do this can be found [here](src/Local_Charity_Recommender_Notebook.ipynb)
-
 # Similar Recommender
 <!-- #region -->
 #### Steps for Building the Similar Recommender:
@@ -125,9 +74,12 @@ A 1-page project summary is available [here](IMG/Charity_Recommender_1pager.pdf)
 - The **Top 3** highest similarity-scoring charities are recommended to the user
 
 ## 
-![SimilarSelector](IMG/Ed_Search.png)
+|![SimilarSelector](IMG/Ed_Search.png)|
+|---|
+
 ## 
-![SimilarRecommendations](IMG/Ed_Recs.png)
+|![SimilarRecommendations](IMG/Ed_Recs.png)|
+|---|
 
 #### The code for this can be found [here](src/Similar_Charity_Recommender_Notebook.ipynb)
 
@@ -170,6 +122,61 @@ The optimal hyperparameters for this model are 4 minimum words and 24% maximum p
 <a href="#Charity-Recommender-System">Back to top</a>
 
 
+## Second Dataset - IRS:
+#### The second dataset comes from [IRS.gov](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf) and contains information about charitable organizations in the United States
+
+- Original Data Set
+  * 1,719,673 charities (rows) with 28 features for each charity (columns)
+- Data Cleaning:
+  * Keep charities that offer fully tax deductible donations and have an NTEE Category Code
+  * Translate NTEE code into category column and keep essential column features
+- Cleaned Data Set
+  * 992,318 charities (rows) with 10 features for each charity (columns)
+
+
+#### Preview of IRS Data Set:
+| EIN | NAME | STATE |INCOME_CD | ZIP_FIVE	 | NTEE_Major_Category	 |  County |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|10130427	|BRIDGTON HOSPITAL	|ME	|9	|04009	|Health - General and Rehabilitative	|Cumberland County|
+|10024645	|BANGOR SYMPHONY ORCHESTRA	|ME	|6	|04402	|Arts, Culture and Humanities	|Penobscot County|
+|10015091	|HANOVER SOCCER CLUB INC	|NJ	|4	|07927	|Recreation, Sports, Leisure, Athletics	|Morris County|
+
+
+## IRS Dataset - Exploratory Data Analysis
+
+|![](IMG/NumCharitiesByIncomeCode.png)|![](IMG/charityCounts_map.png)|
+|---|---|
+|Charity Income Codes, along with a "locality factor," are used to generate recommendations. This chart shows that the of the charities in the dataset have a code of 3 or 4, with about 8% having a code of 7, 8, or 9|Investigating the charities counts by state reveals that California is the most common charity headquarter location, constituting about 11% of our dataset. The next three most-common are Texas, New York, and Florida at about 7% each.|
+
+|![](IMG/Local_Categories.png)|![](IMG/CA_Counts_Map.png)|
+|---|---|
+|Charity Categories are another factor used for generating recommendations. The most common charity categories in the USA are Religious and Education charities, followed by Human Services, Philanthropy, and Arts, Culture, and Humanities.|This map takes a closer look at the charity distribution in California. Within California, the charitable organizations are centered around The SF Bay Area and Los Angeles. Charities also appear to be more frequent along the coast than inland.|
+
+
+# Local Recommender
+<!-- #region -->
+#### Steps for Building the Local Recommender:
+- Receive a **category** and **zipcode** as user input
+- Filter charities on selected category
+- Assign a **"locality score"** to each charity
+  * **Locality Score = (Income Code * Locality Factor) / 50
+   * *Income code* represents annual income of charity, higher income generally means more established charities
+   * *Locality Factor* represents how "local" the charity is to the user, determnined zipcode, county, or state match
+   * 50 Represents the maximum score, and is used to convert from a score to a percentage
+ - The **Top 3** highest-scoring charities are recommended to the user
+
+## 
+|![LocalSelector](IMG/CA_Local_Selector.png)|
+|---|
+## 
+|![LocalRecommendations](IMG/CA_Local_Recs.png)|
+|---|
+
+#### The code to do this can be found [here](src/Local_Charity_Recommender_Notebook.ipynb)
+
+
+
+
 # Conclusion and Next Steps
 Charity Recommender is a functional web application and be be accessed at [www.charityrecommender.com/](http://www.charityrecommender.com/)
 Next steps for this project include adding more charities to the corpus and integrating recommendation features with [www.givz.com/](https://givz.com/)
@@ -183,6 +190,7 @@ Find your next great cause to donate to today!
 * [Gensim](https://radimrehurek.com/gensim/index.html) - Used for Latent Dirichlet Allocation - Topic Modeling
 * [Flask](http://flask.palletsprojects.com/en/1.1.x/) - Framework for Creating the Web Application
 * [Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) - Service for Deploying Web Applications
+* [Tableau](https://www.tableau.com/) - Tool for creating advanced data visualizations
 
 
 ## Acknowledgments
