@@ -116,11 +116,11 @@ Increasing the minimum document count and the maximum document percentage will a
 
 |![](IMG/CategoryScores.png)|
 |---|
-|The category scores graph shows that the category scores fluctuate at various minimum document counts; increasing to an initial spike, dropping sharply, and then gradually increasing again. The optimal parameters for category score are 4 minimum documents and 30% max documents, with a category score of 72.59%|
+|The category scores graph shows that the category scores gradually increase as minimum document count increases, but jump significantly as maximum document percentage increases. The optimal parameters for category score are 4 minimum documents and 30% max documents, with a category score of 71.73%|
 
 |![](IMG/SimilarityScores.png)|
 |---|
-|The similarity scores are fairly consistent across minimum document counts but vary greatly as maximum document percent changes. Using the 4 minimum documents and 30% max documents parameters from the tuned category score results in a similarity score of 37.71%|
+|The similarity scores increase significantly up to 4 minimum documents and then experience a consistent gradual increase. Changing the maximum document percentage does not appear to significantly change similarity scores. Using the 4 minimum documents and 30% max documents parameters from the tuned category score results in a similarity score of 35.72%|
 
 
 #### Creating the Latent Dirichlet Allocation (LDA) Model
