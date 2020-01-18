@@ -273,3 +273,34 @@ def get_recs_from_pickled_model_search(document):
         top_3_sim[document_number] = score
 
     return top_3_sim, loaded_dict
+
+# Function to sort the list by second item of tuple
+def Sort_Tuple(tup):
+    '''
+    '''
+    tup.sort(key = lambda x: x[1],reverse = True)
+    return tup
+
+def predict_charity_topics(charity_number):
+    '''
+    '''
+    # load lda model
+    loaded_lda_model = pickle.load(open('src/finalized_lda.sav', 'rb'))
+    # load bow corpus
+    loaded_bow_corpus = pickle.load(open('src/finalized_bow.sav', 'rb'))
+
+    corpus_lda_model = loaded_lda_model[loaded_bow_corpus]
+
+    topics = ['Family / Human Services','Arts, Culture, Humanities','Community Development',
+              'Religion','Youth Development - Camp/Clubs','Family / Community Development',
+              'Housing / Home Development','Research & Policy / International','Education',
+              'Health Research & Treatment','Human Services - Food Aid','Animals / Environment',
+              'U.S. State Charities','Human and Civil Services','Youth Development - Mind/Body']
+
+    topics_list, probabilities = [], []
+
+    for charity in Sort_Tuple(corpus_lda_model[charity_number])[:3]:
+        topics_list.append(topics[charity[0]])
+        probabilities.append(round(charity[1]*100,2))
+
+    return topics_list, probabilities

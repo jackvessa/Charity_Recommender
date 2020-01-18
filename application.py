@@ -99,18 +99,22 @@ def localrec():
                 <html>
 
                     <head>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
                         <title>Charity Recommendations</title>
 
                         <div class = 'navBar'>
 
-                            <a href="/localrec" class="button">Local Charities</a>
-
-                            <a href="/" class="button4">Homepage</a>
-
                             <a href="/charitySimilarity" class="button">Similar Charities</a>
 
-                            <a href="/charitySearch" class="button4">Search</a>
+                            <a href="/localrec" class="button">Local Charities</a>
 
+                            <a href="/" class="button">Homepage</a>
+
+                            <a href="/charitySearch" class="button">Search</a>
+
+                            <a href="/about" class="button">Meet the Creator</a>
 
                         </div>
 
@@ -133,6 +137,10 @@ def localrec():
                             <p8> {county0} </br></p8>
                             <p8> {state0} </p8>
 
+                        </div>
+
+                        <div class="Recommendations" id="rcorners2" style= "  border: 0px solid white;">
+                            <p1 style= "font-size: 40px;"> <i>Recommendations</i> </p1>
                         </div>
 
                         <div class="RecommenderCharitiesLDA" id="rcorners2">
@@ -243,18 +251,22 @@ def localrec():
               <head>
 
                 <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
                 <title>Local Charity Recommender</title>
                 <link rel='stylesheet' href='static/localrec.css'>
 
                 <div class = 'navBar'>
 
-                    <a href="/localrec" class="button">Local Charities</a>
-
-                    <a href="/" class="button4">Homepage</a>
-
                     <a href="/charitySimilarity" class="button">Similar Charities</a>
 
-                    <a href="/charitySearch" class="button4">Search</a>
+                    <a href="/localrec" class="button">Local Charities</a>
+
+                    <a href="/" class="button">Homepage</a>
+
+                    <a href="/charitySearch" class="button">Search</a>
+
+                    <a href="/about" class="button">Meet the Creator</a>
 
 
                 </div>
@@ -271,7 +283,7 @@ def localrec():
 
 
 
-                            <h4>Step 1: Choose a Category</h4>
+                            <h4 >Step 1: Select a Category</h4>
 
                             <input type="radio" name="major_category" value="Animal-Related" id=Animal>
                             <label class="drinkcard-cc Animal-Related" for="Animal"></label>
@@ -310,12 +322,7 @@ def localrec():
 
                                 <p class="zip"><input name="zipcode" autocomplete="off" placeholder="Enter 5-Digit Zipcode"/></p>
 
-
-                            </div>
-
-                            <div id = "rcorners1">
-
-                                <p class="zip"><input type="submit" value="Submit Specifications" /></p>
+                                <p class="zip"><input type="submit" value="Find Your Local Charity" /></p>
 
                             </div>
 
@@ -374,7 +381,7 @@ def charitySimilarity():
             charity_ratings_list,charity_desc_list,sim_score_list = [],[],[]
             rec_names_list,cat_name_list,state_name_list = [],[],[]
             charity_info_list,link_list,google_links_list = [],[],[]
-            motto_list = []
+            motto_list, topics_list = [], []
 
             charity_link, google_link,state_name = '','',''
             category_name, rec_name, charity_info = "", "",""
@@ -413,6 +420,19 @@ def charitySimilarity():
             google_links_list.append(google_link)
             similar_words_list_array = []
 
+            topics, probabilities = predict_charity_topics(current_charity_df.index[0])
+            print("Topics:", topics)
+
+            topics_string_list = []
+
+            for i in range(3):
+                try:
+                    topics_string_list.append(str(topics[i])+' (' +str(probabilities[i]) + '%)')
+                except:
+                    topics_string_list.append("N/A")
+
+            topics_list.append(topics_string_list)
+
             for number,score in top_3_similar.items():
                 charity_link, google_link = '',''
 
@@ -442,11 +462,20 @@ def charitySimilarity():
                 motto_list.append(motto)
 
                 sim_words = create_sim_word_dict(user_file.corpus.iloc[0], file_info.corpus.iloc[0], dictionary)
-                sim_word_string = ""
+                sim_word_array = []
 
-                for i in sorted (sim_words, key=sim_words.get, reverse=True) :
-                    sim_word_string += str(i) + ": " + str(sim_words[i]) + '</br>'
-                similar_words_list_array.append(sim_word_string)
+                for i in sorted(sim_words, key=sim_words.get, reverse=True)[:3]:
+                    try:
+                        sim_word_array.append(str(i))
+                    except:
+                        sim_word_array.append("N/A")
+
+                while (len(sim_word_array) != 3):
+                    sim_word_array.append("N/A")
+
+                print("Sim Words:",sim_word_array)
+
+                similar_words_list_array.append(sim_word_array)
 
                 name = str(file_info.name.iloc[0])
                 name = name.replace(" ","-")
@@ -460,170 +489,277 @@ def charitySimilarity():
 
                 google_links_list.append(google_link)
 
+                topics, probabilities = predict_charity_topics(number)
+
+                topics_string_list = []
+
+                for i in range(3):
+                    try:
+                        topics_string_list.append(str(topics[i])+' (' +str(probabilities[i]) + '%)')
+                    except:
+                        topics_string_list.append("N/A")
+
+                topics_list.append(topics_string_list)
+
             return '''
                 <html>
 
                     <head>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
                         <title>Similar Charity Recommendations</title>
                         <link rel='stylesheet' href='static/localrec.css'>
 
                         <div class = 'navBar'>
 
-                            <a href="/localrec" class="button">Local Charities</a>
-
-                            <a href="/" class="button4">Homepage</a>
-
                             <a href="/charitySimilarity" class="button">Similar Charities</a>
 
-                            <a href="/charitySearch" class="button4">Search</a>
+                            <a href="/localrec" class="button">Local Charities</a>
 
+                            <a href="/" class="button">Homepage</a>
+
+                            <a href="/charitySearch" class="button">Search</a>
+
+                            <a href="/about" class="button">Meet the Creator</a>
 
                         </div>
 
-                        <h1>Similar Charity Recommendations</h1>
+                        <h1>Selected Charity</h1>
 
                     </head>
 
                     <body>
 
                         <div class="SimilarCharity">
+                            <div class= 'SimRecommendation'>
+                                <p0> {rec_names_list0} </p0>
+                                <p2> </br>{cat_name_list0} </p2>
 
-                            <p0> {rec_names_list0} </p0>
-                            <p2> </br>{cat_name_list0} </p2>
+                                <p6> </br>{motto0} </p6>
 
-                            <p6> </br></br>{motto0} </p6>
+                                <div class="CharityDesc">
+                                    <p3> {desc0} </p3>
+                                </div>
 
-                            <div class="CharityDesc">
-                                <p3> {desc0} </p3>
-                            </div>
+                                <div class= "scoringTable0"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th width=60%><span style="font-weight: bold;">CharityNav Rating</span></th>
+                                                <th>State</th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{rating0}%</td>
+                                                <td>{state0}</td>
+                                            </tr>
+                                        </table>
+                                </div>
 
-                            <div class= "scoringTable0"
-                                <h2></h2>
-                                    <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
-                                        <tr>
-                                            <th width=60%><span style="font-weight: bold;">CharityNav Rating</span></th>
-                                            <th>State</th>
-                                        </tr>
-                                        <tr style="color:#00ac79";>
-                                            <td>{rating0}%</td>
-                                            <td>{state0}</td>
-                                        </tr>
-                                    </table>
-                            </div>
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th colspan="3"><strong>Predicted Charity Topic</strong></th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{topic_0_1}</td>
+                                                <td>{topic_0_2}</td>
+                                                <td>{topic_0_3}</td>
+                                            </tr>
+                                            </table>
+                                </div>
 
-
-                            <div id="buttonSep">
-                                <a href={link0} target="_blank" class="button">Donate</a>
-                                <a href={goog0} target="_blank" class="button4">Learn More</a>
-                            </div>
-                        </div>
-
-                        <div class="RecommenderCharitiesLDA" id="rcorners2">
-                            <p1> {rec_names_list1} </p1>
-                            <p2> </br>{cat_name_list1} </p2>
-
-                            <p6> </br></br>{motto1} </p6>
-
-                            <div class="CharityDesc">
-                                <p3> {desc1} </p3>
-                            </div>
-
-                            <div class= "scoringTable"
-                                <h2></br></h2>
-                                    <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
-                                        <tr>
-                                            <th width=36%><strong>Similarity Score</strong></th>
-                                            <th width=36%><span style="font-weight: bold;">CharityNav Rating</span></th>
-                                            <th>State</th>
-                                        </tr>
-                                        <tr style="color:#00ac79";>
-                                            <td>{sim1}%</td>
-                                            <td>{rating1}%</td>
-                                            <td>{state1}</td>
-                                        </tr>
-                                        </table><br>
-                            </div>
-
-                            <div class= 'simWords'>
-                                <p6> Similar Words </br></p6>
-                                <p5>{sim_words1}</p5>
-                            </div>
-
-                            <div id="buttonSep">
-                                <a href={link1} target="_blank" class="button">Donate</a>
-                                <a href={goog1} target="_blank" class="button4">Learn More</a>
+                                <div id="buttonSep">
+                                    <a href={link0} target="_blank" class="button4">Donate</a>
+                                    <a href={goog0} target="_blank" class="button4">Learn More</a>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="RecommenderCharitiesLDA" id="rcorners2">
-                            <p1> {rec_names_list2} </p1>
-                            <p2> </br>{cat_name_list2} </p2>
-                            <p6> </br></br>{motto2} </p6>
+                        <div class="Recommendations" id="rcorners2" style= "border: 0px solid white;">
+                            <h1>Similar Charities:</h1>
+                        </div>
 
-                            <div class="CharityDesc">
-                                <p3> {desc2} </p3>
-                            </div>
+                        <div class="SimilarCharity">
+                            <div class= 'SimRecommendation'>
+                                <p1> {rec_names_list1} </p1>
+                                <p2> </br>{cat_name_list1} </p2>
 
-                            <div class= "scoringTable"
-                                <h2></br></h2>
-                                    <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
-                                        <tr>
-                                            <th width=36%><strong>Similarity Score</strong></th>
-                                            <th width=36%><span style="font-weight: bold;">CharityNav Rating</span></th>
-                                            <th>State</th>
-                                        </tr>
-                                        <tr style="color:#00ac79";>
-                                            <td>{sim2}%</td>
-                                            <td>{rating2}%</td>
-                                            <td>{state2}</td>
-                                        </tr>
-                                        </table><br>
-                            </div>
+                                <p6> </br>{motto1} </p6>
 
-                            <div class= 'simWords'>
-                                <p6> Similar Words </br></p6>
-                                <p5>{sim_words2}</p5>
-                            </div>
+                                <div class="CharityDesc">
+                                    <p3> {desc1} </p3>
+                                </div>
 
-                            <div id="buttonSep">
-                                <a href={link2} target="_blank" class="button">Donate</a>
-                                <a href={goog2} target="_blank" class="button4">Learn More</a>
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th width=36%><strong>Similarity Score</strong></th>
+                                                <th width=36%><span style="font-weight: bold;">CharityNav Rating</span></th>
+                                                <th>State</th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{sim1}%</td>
+                                                <td>{rating1}%</td>
+                                                <td>{state1}</td>
+                                            </tr>
+                                            </table>
+                                </div>
+
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th colspan="3"><strong>Top 3 Similar Words</strong></th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{sim_words_1a}</td>
+                                                <td>{sim_words_1b}</td>
+                                                <td>{sim_words_1c}</td>
+                                            </tr>
+                                            </table>
+                                </div>
+
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th colspan="3"><strong>Predicted Charity Topic</strong></th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{topic_1_1}</td>
+                                                <td>{topic_1_2}</td>
+                                                <td>{topic_1_3}</td>
+                                            </tr>
+                                            </table>
+                                </div>
+
+                                <div id="buttonSep">
+                                    <a href={link1} target="_blank" class="button4">Donate</a>
+                                    <a href={goog1} target="_blank" class="button4">Learn More</a>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="RecommenderCharitiesLDA" id="rcorners2">
-                            <p1> {rec_names_list3} </p1>
-                            <p2> </br>{cat_name_list3} </p2>
-                            <p6> </br></br>{motto3} </p6>
+                        <div class="SimilarCharity">
+                            <div class= 'SimRecommendation'>
+                                <p1> {rec_names_list2} </p1>
+                                <p2> </br>{cat_name_list2} </p2>
+                                <p6> </br>{motto2} </p6>
 
-                            <div class="CharityDesc">
-                                <p3> {desc3} </p3>
+                                <div class="CharityDesc">
+                                    <p3> {desc2} </p3>
+                                </div>
+
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th width=36%><strong>Similarity Score</strong></th>
+                                                <th width=36%><span style="font-weight: bold;">CharityNav Rating</span></th>
+                                                <th>State</th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{sim2}%</td>
+                                                <td>{rating2}%</td>
+                                                <td>{state2}</td>
+                                            </tr>
+                                            </table>
+                                </div>
+
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th colspan="3"><strong>Top 3 Similar Words</strong></th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{sim_words_2a}</td>
+                                                <td>{sim_words_2b}</td>
+                                                <td>{sim_words_2c}</td>
+                                            </tr>
+                                            </table>
+                                </div>
+
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th colspan="3"><strong>Predicted Charity Topic</strong></th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{topic_2_1}</td>
+                                                <td>{topic_2_2}</td>
+                                                <td>{topic_2_3}</td>
+                                            </tr>
+                                            </table>
+                                </div>
+
+                                <div id="buttonSep">
+                                    <a href={link2} target="_blank" class="button4">Donate</a>
+                                    <a href={goog2} target="_blank" class="button4">Learn More</a>
+                                </div>
                             </div>
+                        </div>
 
-                            <div class= "scoringTable"
-                                <h2></br></h2>
-                                    <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
-                                        <tr>
-                                            <th width=36%><strong>Similarity Score</strong></th>
-                                            <th width=36%><span style="font-weight: bold;">CharityNav Rating</span></th>
-                                            <th>State</th>
-                                        </tr>
-                                        <tr style="color:#00ac79";>
-                                            <td>{sim3}%</td>
-                                            <td>{rating3}%</td>
-                                            <td>{state3}</td>
-                                        </tr>
-                                        </table><br>
-                            </div>
+                        <div class="SimilarCharity">
+                            <div class= 'SimRecommendation'>
+                                <p1> {rec_names_list3} </p1>
+                                <p2> </br>{cat_name_list3} </p2>
+                                <p6> </br>{motto3} </p6>
 
-                            <div class= 'simWords'>
-                                <p6> Similar Words </br></p6>
-                                <p5>{sim_words3}</p5>
-                            </div>
+                                <div class="CharityDesc">
+                                    <p3> {desc3} </p3>
+                                </div>
 
-                            <div id="buttonSep">
-                                <a href={link3} target="_blank" class="button">Donate</a>
-                                <a href={goog3} target="_blank" class="button4">Learn More</a>
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th width=36%><strong>Similarity Score</strong></th>
+                                                <th width=36%><span style="font-weight: bold;">CharityNav Rating</span></th>
+                                                <th>State</th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{sim3}%</td>
+                                                <td>{rating3}%</td>
+                                                <td>{state3}</td>
+                                            </tr>
+                                </div>
+
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th colspan="3"><strong>Top 3 Similar Words</strong></th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{sim_words_3a}</td>
+                                                <td>{sim_words_3b}</td>
+                                                <td>{sim_words_3c}</td>
+                                            </tr>
+                                            </table>
+                                </div>
+
+                                <div class= "scoringTable"
+                                    <h2></h2>
+                                        <table id = 'scoring2' width="100%" border="1" cellpadding="1" style="text-align: center; font-weight: bold;">
+                                            <tr>
+                                                <th colspan="3"><strong>Predicted Charity Topic</strong></th>
+                                            </tr>
+                                            <tr style="color:#00ac79";>
+                                                <td>{topic_3_1}</td>
+                                                <td>{topic_3_2}</td>
+                                                <td>{topic_3_3}</td>
+                                            </tr>
+                                            </table>
+                                </div>
+
+                                <div id="buttonSep">
+                                    <a href={link3} target="_blank" class="button4">Donate</a>
+                                    <a href={goog3} target="_blank" class="button4">Learn More</a>
+                                </div>
                             </div>
                         </div>
 
@@ -640,25 +776,34 @@ def charitySimilarity():
             sim2=sim_score_list[1],rating2=charity_ratings_list[2],state2=state_name_list[2],
             sim3=sim_score_list[2],rating3=charity_ratings_list[3],state3=state_name_list[3],
             motto0=motto_list[0],motto1=motto_list[1],motto2=motto_list[2],motto3=motto_list[3],
-            sim_words1=similar_words_list_array[0],sim_words2=similar_words_list_array[1],sim_words3=similar_words_list_array[2])
+            sim_words_1a=similar_words_list_array[0][0],sim_words_1b=similar_words_list_array[0][1],sim_words_1c=similar_words_list_array[0][2],
+            sim_words_2a=similar_words_list_array[1][0],sim_words_2b=similar_words_list_array[1][1],sim_words_2c=similar_words_list_array[1][2],
+            sim_words_3a=similar_words_list_array[2][0],sim_words_3b=similar_words_list_array[2][1],sim_words_3c=similar_words_list_array[2][2],
+            topic_0_1 = topics_list[0][0], topic_0_2 = topics_list[0][1], topic_0_3 = topics_list[0][2],
+            topic_1_1 = topics_list[1][0], topic_1_2 = topics_list[1][1], topic_1_3 = topics_list[1][2],
+            topic_2_1 = topics_list[2][0], topic_2_2 = topics_list[2][1], topic_2_3 = topics_list[2][2],
+            topic_3_1 = topics_list[3][0], topic_3_2 = topics_list[3][1], topic_3_3 = topics_list[3][2])
     return """
         <html>
 
               <head>
                 <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
                 <title>Similar Charity Recommender</title>
                 <link rel='stylesheet' href='static/localrec.css'>
 
                 <div class = 'navBar'>
 
-                    <a href="/localrec" class="button">Local Charities</a>
-
-                    <a href="/" class="button4">Homepage</a>
-
                     <a href="/charitySimilarity" class="button">Similar Charities</a>
 
-                    <a href="/charitySearch" class="button4">Search</a>
+                    <a href="/localrec" class="button">Local Charities</a>
 
+                    <a href="/" class="button">Homepage</a>
+
+                    <a href="/charitySearch" class="button">Search</a>
+
+                    <a href="/about" class="button">Meet the Creator</a>
 
                 </div>
 
@@ -667,7 +812,7 @@ def charitySimilarity():
             <body>
                 <h1>Let's Find Similar Charities!</h1>
 
-                <p style='color:black; text-align: center; font-size: 30px; font-style: italic; font-weight:bold; margin: 3px;'>* Charity Names will Auto-Fill *</p>
+                <p style='color:black; text-align: center; font-style: italic; font-weight:bold; margin: 3px;'>* Charity Names will Auto-Fill *</p>
 
                 <form autocomplete="off" method="post" enctype="multipart/form-data">
                   <div class="autocomplete">
@@ -679,6 +824,11 @@ def charitySimilarity():
                   </div>
 
                 </form>
+                <div class = 'simImage'>
+                    <a class="imageSim">
+                      <img id='image1' src="https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/similar.jpg?raw=true" alt="similar">
+                    </a>
+                 </div>
 
                 <script>
                     function autocomplete(inp, arr) {
@@ -907,14 +1057,15 @@ def charitySearch():
 
                         <div class = 'navBar'>
 
-                            <a href="/localrec" class="button">Local Charities</a>
-
-                            <a href="/" class="button4">Homepage</a>
-
                             <a href="/charitySimilarity" class="button">Similar Charities</a>
 
-                            <a href="/charitySearch" class="button4">Search</a>
+                            <a href="/localrec" class="button">Local Charities</a>
 
+                            <a href="/" class="button">Homepage</a>
+
+                            <a href="/charitySearch" class="button">Search</a>
+
+                            <a href="/about" class="button">Meet the Creator</a>
 
                         </div>
 
@@ -933,6 +1084,10 @@ def charitySearch():
                                 <p5> {desc0} </br> </p5>
                             </div>
 
+                        </div>
+
+                        <div class="Recommendations" id="rcorners2" style= "  border: 0px solid white;">
+                            <p1 style= "font-size: 40px;"> <i>Recommendations</i> </p1>
                         </div>
 
                         <div class="RecommenderCharitiesLDA" id="rcorners2">
@@ -1066,19 +1221,22 @@ def charitySearch():
 
               <head>
                 <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
                 <title>Similar Charity Recommender</title>
                 <link rel='stylesheet' href='static/localrec.css'>
 
                 <div class = 'navBar'>
 
-                    <a href="/localrec" class="button">Local Charities</a>
-
-                    <a href="/" class="button4">Homepage</a>
-
                     <a href="/charitySimilarity" class="button">Similar Charities</a>
 
-                    <a href="/charitySearch" class="button4">Search</a>
+                    <a href="/localrec" class="button">Local Charities</a>
 
+                    <a href="/" class="button">Homepage</a>
+
+                    <a href="/charitySearch" class="button">Search</a>
+
+                    <a href="/about" class="button">Meet the Creator</a>
 
                 </div>
 
@@ -1089,7 +1247,6 @@ def charitySearch():
 
                 <p style='color:black; text-align: center; font-size: 30px; font-style: italic; font-weight:bold; margin: 3px;'>* Enter Keywords or Paste a Description *</p>
 
-
                 <form autocomplete="off" method="post" enctype="multipart/form-data">
 
                     <div class="autocomplete">
@@ -1099,13 +1256,22 @@ def charitySearch():
                       <p class='zip'><input type="submit" value="Find Similar Charities" /></p>
 
                       </div>
-
                 </form>
+
+                <div class = 'simImage'>
+                    <a class="imageSim">
+                      <img id='image1' src="https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/search.jpg?raw=true" alt="search">
+                    </a>
+                 </div>
 
             </body>
         </html>
     """
 
+# Index route
+@application.route('/about', methods=['GET'])
+def about():
+    return  render_template('index.html')
 
 
 #                    <p><input name="major_category" /></p>

@@ -17,13 +17,31 @@ div {
   font-weight: 600;
   color: black;
   background-color: white;
-  border: 2px solid #00ac79;
-  margin: 10px;
+  border: 0px solid #00ac79;
+  margin: 1%;
   padding: 10px;
   text-align: center;
   font-weight: bold;
   border-radius: 25px;
-  width: 97%;
+  width: 98%;
+  float:center;
+}
+
+.SimRecommendation {
+  font-family: "Barlow", sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+  border: 5px solid #00ac79;
+  margin: 0%;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 25px;
+  width: 80%;
+  float:center;
+  display: inline-block;
 }
 
 .LocalInfo {
@@ -54,17 +72,24 @@ div {
   border-radius: 25px;
 }
 
-.navBar{
-  background-color: white;
-  width: 97%;
-  border: 0px solid blue;
-  height:50px;
+.homepage_title {
+  width: 100%;
   margin: 0px;
+    border: 0px solid #00ac79;
+}
+
+.navBar{
+  background-color: #00ac79;
+  width: 100%;
+  border: 0px solid blue;
+  height:70px;
+  margin: 0px;
+  padding: 0px;
   margin-bottom: 0px;
   float: center;
   font-weight: bold;
   text-align:center;
-  border-radius: 25px;
+  border-radius: 0px;
   justify-content: center;
   align-items: center;
   top:50%;
@@ -72,15 +97,20 @@ div {
   display: flex;
 }
 
+.head {
+  margin: 0px;
+}
+
+
 .navBarHome{
   background-color: white;
-  width: 97%;
+  width: 100%;
   border: 0px solid blue;
-  height:370px;
-  margin: 5px;
+  height:100%;
+  margin: 0px;
   margin-bottom: 20px;
   padding: 0px;
-  float: center;
+  /* float: center; */
   font-weight: bold;
   text-align:center;
   border-radius: 25px;
@@ -89,13 +119,15 @@ div {
   top:50%;
   left:50%;
   display: flex;
+  float: none;
 }
 
 .homebutton{
-  background-color: white;
+  background-color: #00ac79;
   /* width: 97%; */
   border: 0px solid blue;
   width: 31%;
+  height: 100%;
   padding: 0px;
 
   /* height:250px; */
@@ -110,6 +142,16 @@ div {
   top:50%;
   left:50%;
   display: flex; */
+}
+
+.simImage{
+  background-color: none;
+  /* width: 97%; */
+  border: 0px solid blue;
+  width: 100%;
+  height: 300px;
+  padding: 0px;
+  margin:0px;
 }
 
 .again{
@@ -130,11 +172,19 @@ div {
 }
 
 .RecommenderCharitiesLDA {
-  width: 31%;
+  width: 100%;
   padding: 2px;
   margin: 2px;
-
+  /* min-width: 280px; */
 }
+
+.Recommendations {
+  width: 100%;
+  padding: 2px;
+  margin: 2px;
+  /* min-width: 280px; */
+}
+
 
 .CharityDesc0 {
   width: 100%;
@@ -164,15 +214,19 @@ div {
 }
 
 .scoringTable0 {
-  width: 30%;
+  width: 95%;
   border: 0px solid blue;
   padding: 0px;
-  margin: 15px;
+  margin: 2.5%;
   align-items: center;
   display: inline-block;
 }
 
 a.imageHome {
+  margin:0px;
+}
+
+a.imageSim {
   margin:0px;
 }
 
@@ -183,14 +237,15 @@ a.buttonHome {
     border: none;
     -webkit-border-radius: 8px;
     display: table-cell;
-    background-color: #00ac79;
+    /* background-color: #00ac79; */
+    background-color: none;
     border-radius: 2px;
-    height: 100px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     outline: none;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
     color: white;
     font-family: "Barlow", sans-serif;
     font-size: 40px;
@@ -200,6 +255,7 @@ a.buttonHome {
     align-items: center;
     text-align: center;
     align:center;
+    margin: 0px;
 }
 
 a.button {
@@ -212,7 +268,7 @@ a.button {
     background-color: #00ac79;
     border-radius: 8px;
     font-size: 20px;
-    height: 30px;
+    height: 50px;
     justify-content: center;
     outline: none;
     padding-left: 20px;
@@ -285,7 +341,7 @@ a.button4 {
   background-color: white;
   border-radius: 8px;
   font-size: 20px;
-  height: 30px;
+  height: 50px;
   justify-content: center;
   outline: none;
   padding-left: 15px;
@@ -301,13 +357,19 @@ a.button4 {
   width:200px;
 }
 
+#image1 {
+  width:35%;
+  height: auto;
+  vertical-align: bottom;
+}
+
 #rcorners1 {
   border-radius: 25px;
   background-color: white;
-  width: 100%;
+  width: 98%;
   border: 0px solid blue;
   padding: 0px;
-  margin: 10px;
+  margin: 0px;
   float: right;
 }
 
@@ -317,7 +379,7 @@ a.button4 {
   border: 2px solid #00ac79;
   padding: 20px;
   margin: 10px;
-  width: 31%;
+  width: 98%;
   float: left
 }
 
@@ -346,7 +408,7 @@ a.button4 {
 
 #searchTextArea {
   height: 375px;
-  width:80%;
+  width:60%;
   font-size: 20px;
   color: black;
   background-color: #f1f1f1;
@@ -360,6 +422,7 @@ a.button4 {
 
 body {
     background-color: white;
+    margin: 0px;
 }
 
 img {
@@ -440,7 +503,7 @@ h5 {
 p {
   text-align: left;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 30px;
   align-items: center;
 
 }
@@ -448,7 +511,7 @@ p {
 p0 {
   text-align: center;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 50px;
   align-items: center;
   color: black ;
 }
@@ -456,7 +519,7 @@ p0 {
 p1 {
   text-align: center;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 50px;
   align-items: center;
   color: black ;
 }
@@ -464,7 +527,7 @@ p1 {
 p2 {
   text-align: center;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 40px;
   align-items: center;
   color: #00ac79 ;
 }
@@ -525,16 +588,23 @@ p8 {
   color: #00ac79 ;
 }
 
+p9 {
+  text-align: left;
+  font-weight: normal;
+  font-size: 18px;
+  align-items: center;
+}
+
 a {
   text-align: center;
   font-weight: bold;
   margin-left: 5px;
   margin-right: 5px;
+  width: 100%;
 }
 
 .zip {
   text-align: center;
-
 }
 
 .simWords {
@@ -559,6 +629,8 @@ a {
 
 #scoring2 {
   font-size:20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #buttonSep {
@@ -571,7 +643,7 @@ a {
     justify-content: center;
     display: flex;
     text-align:center;
-
+    border-radius: 15px;
 }
 
 
@@ -599,6 +671,7 @@ a {
 
 .cc-selector{
    width: 100%;
+   height: 600px;
    border: 0px solid black;
    margin-left: 0px;
    margin-right: 0px;
@@ -619,13 +692,13 @@ a {
             filter: none;
 }
 .drinkcard-cc{
-    border: 2px solid #00ac79;
+    border: 0px solid #00ac79;
     cursor:pointer;
     background-size:contain;
     background-repeat:no-repeat;
     display:inline-block;
-    width:200px;
-    height:230px;
+    width:17%;
+    height:40%;
     margin: 9px;
     padding: 5px;
     border-radius: 15px;
@@ -676,16 +749,16 @@ input[type=radio] {
 
 input[type=text] {
   background-color: #f1f1f1;
-  width: 80%;
+  width: 60%;
   font-size: 35px;
   text-align: center;
   align-items: center;
 }
 input[type=submit] {
-  background-color: DodgerBlue;
+  background-color: #00ac79;
   color: #fff;
   font-size: 25px;
-  width:80%;
+  width:60%;
 }
 
 .autocomplete {
@@ -696,11 +769,13 @@ input[type=submit] {
   color:#00ac79;
   border: 0px solid black;
   padding:0px;
+  margin: 5px;
 }
 
 .autocomplete-items {
   position: absolute;
   border: 0.5px solid black;
+  background-color: #00ac79;
   /* border-bottom: none; */
   /* border-top: none; */
   z-index: 99;
@@ -708,16 +783,20 @@ input[type=submit] {
   top: 100%;
   left: 0;
   right: 0;
-  width: 95%;
+  width: 100%;
   font-weight: 600;
   font-size: 30px;
+  margin:0px;
+  padding:5px;
 }
+
+
 .autocomplete-items div {
   /* padding: 10px; */
   cursor: pointer;
   background-color: #fff;
-  width: 95%;
-  margin:3px;
+  width: 99%;
+  margin:5px;
   padding:5px;
   border: 1px solid black;
 }
@@ -729,4 +808,822 @@ input[type=submit] {
   /*when navigating through the items using the arrow keys:*/
   background-color: DodgerBlue !important;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 640px) {
+  /* Divs */
+  div {
+      background-color: white;
+      width: 29%;
+      border: 4px solid #00ac79;
+      padding: 30px;
+      margin: 20px;
+      /* float: left; */
+      text-align:center;
+
+  }
+
+  .SimilarCharity {
+    font-family: "Barlow", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    border: 2px solid #00ac79;
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .LocalInfo {
+    font-family: "Barlow", sans-serif;
+    font-size: 35px;
+    font-weight: normal;
+    color: black;
+    background-color: white;
+    border: 2px solid #00ac79;
+    /* margin: 10px;
+    padding: 10px; */
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 97%;
+    vertical-align: middle;
+    height:270px;
+  }
+
+  .charityCategory {
+    background-color: white;
+    width: 100%;
+    border: 2px solid #00ac79;
+    padding: 10px;
+    margin: 10px;
+    float: center;
+    font-weight: bold;
+    border-radius: 25px;
+  }
+
+  .navBar{
+    background-color: #00ac79;
+    width: 100%;
+    border: 0px solid blue;
+    height:70px;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+    float: center;
+    font-weight: bold;
+    text-align:center;
+    border-radius: 0px;
+    justify-content: center;
+    align-items: center;
+    top:50%;
+    left:50%;
+    display: flex;
+  }
+
+  .navBarHome{
+    background-color: white;
+    width: 97%;
+    border: 0px solid blue;
+    height:370px;
+    margin: 5px;
+    margin-bottom: 20px;
+    padding: 0px;
+    float: center;
+    font-weight: bold;
+    text-align:center;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    top:50%;
+    left:50%;
+    display: table;
+
+  }
+
+  .homebutton{
+    background-color: white;
+    /* width: 97%; */
+    border: 0px solid blue;
+    width: 98%;
+    padding: 0px;
+    height: 30%;
+    margin: 1%;
+
+    /* height:250px; */
+    /* margin: 5px;
+    margin-bottom: 20px; */
+    /* float: center;
+    font-weight: bold;
+    text-align:center;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    top:50%;
+    left:50%;
+    display: flex; */
+  }
+
+  .again{
+    background-color: white;
+    width: 395px;
+    border: 3px solid blue;
+    height:100px;
+    margin: 10px;
+    float: center;
+    font-weight: bold;
+    text-align:center;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    top:50%;
+    left:50%;
+    display: flex;
+  }
+
+  .RecommenderCharitiesLDA {
+    width: 100%;
+    padding: 2px;
+    margin: 2px;
+    /* min-width: 280px; */
+  }
+
+  .Recommendations {
+    width: 100%;
+    padding: 2px;
+    margin: 2px;
+    /* min-width: 280px; */
+  }
+
+
+  .CharityDesc0 {
+    width: 100%;
+    border: 0px solid blue;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 15px;
+    text-align: center;
+    text-justify: inter-word;
+  }
+
+  .CharityDesc {
+    width: 100%;
+    border: 0px solid blue;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 15px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  .scoringTable {
+    width: 100%;
+    border: 0px solid blue;
+    padding: 0px;
+    margin: 0px;
+
+  }
+
+  .scoringTable0 {
+    width: 98%;
+    border: 0px solid blue;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-items: center;
+    display: inline-block;
+  }
+
+  a.imageHome {
+    margin:0px;
+  }
+
+  a.imageSim {
+    margin:0px;
+  }
+
+  a.buttonHome {
+      /* -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none; */
+      -webkit-border-radius: 8px;
+      /* display: table-cell; */
+      display: flex;
+      background-color: #00ac79;
+      border-radius: 2px;
+      height: 50px;
+      width: 100%;
+      /* justify-content: center; */
+      outline: none;
+      padding-left: 0px;
+      padding-right: 0px;
+      color: white;
+      font-family: "Barlow", sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+      margin: 0px;
+      /* text-decoration: none;
+      vertical-align: middle;
+      align-items: center;
+      text-align: center;
+      align:center; */
+
+  }
+
+  a.button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      -webkit-border-radius: 8px;
+      display: flex;
+      background-color: #00ac79;
+      border-radius: 8px;
+      font-size: 12px;
+      height: 50px;
+      justify-content: center;
+      outline: none;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: white;
+      font-family: "Barlow", sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      vertical-align: middle;
+      align-items: center;
+      text-align: center;
+      width:17%;
+  }
+
+  a.button2 {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      -webkit-border-radius: 8px;
+      display: flex;
+      background-color: white;
+      border-radius: 8px;
+      font-size: 20px;
+      height: 45px;
+      justify-content: center;
+      outline: none;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #00ac79;
+      font-family: "Barlow", sans-serif;
+      font-weight: 600;
+      text-decoration: none;
+      vertical-align: middle;
+      text-align:center;
+      align-items: center;
+      border: 2px solid #00ac79;
+      width:150px;
+  }
+
+  a.button3 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    -webkit-border-radius: 8px;
+    display: table-cell;
+    background-color: #00ac79;
+    border-radius: 8px;
+    font-size: 16px;
+    height: 45px;
+    justify-content: center;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  a.button4 {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    -webkit-border-radius: 8px;
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    height: 50px;
+    justify-content: center;
+    outline: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #00ac79;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align:center;
+    align-items: center;
+    border: 2px solid #00ac79;
+    width:45%;
+  }
+
+  #rcorners1 {
+    border-radius: 25px;
+    background-color: white;
+    width: 98%;
+    border: 0px solid blue;
+    padding: 0px;
+    margin: 0px;
+    float: right;
+  }
+
+  #rcorners2 {
+    border-radius: 25px;
+    background-color: white;
+    border: 2px solid #00ac79;
+    padding: 3px;
+    margin: 1%;
+    width: 98%;
+    float: left
+  }
+
+  #rcorners3 {
+    border-radius: 25px;
+    background-color: white;
+    width: 100%;
+    border: 0px solid #00ac79;
+    padding: 10px;
+    margin: 0px;
+    float: center;
+    text-align:center;
+    align-items: center;
+    display: inline-block
+  }
+
+  #rcorners4 {
+    border-radius: 25px;
+    background-color: white;
+    border: 0px solid #00ac79;
+    padding: 6px;
+    margin: 10px;
+    width: 98%;
+    float: left
+  }
+
+  #searchTextArea {
+    height: 200px;
+    width:80%;
+    font-size: 20px;
+    color: black;
+    background-color: #f1f1f1;
+  }
+
+
+  /* img{
+      height: 150px;
+      width: 150px;
+  } */
+
+  body {
+      background-color: white;
+  }
+
+  img {
+      height: 150px;
+      width: 150px;
+  }
+
+  li {
+      font-family: monospace;
+  }
+
+  /* Headers */
+
+  head {
+    text-align: center;
+    align-items: center;
+  }
+
+  h1 {
+      font-family: "Barlow", sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      color:  #00ac79;
+      background-color: white;
+      border: 0px solid #00ac79;
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 25px;
+      font-size: 37px;
+  }
+
+  h3 {
+      font-family: "Barlow", sans-serif;
+      font-style: italic;
+      font-weight: 600;
+      color:  black;
+      background-color: white;
+      border: 0px solid #00ac79;
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 25px;
+      font-size: 20px;
+      width: 97%;
+  }
+
+  h4 {
+      font-family: "Barlow", sans-serif;
+      font-weight: 600;
+      color: black;
+      background-color: white;
+      /* border: 1px solid #00ac79; */
+      margin: 1px;
+      padding: 1px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 25px;
+      font-size: 25px;
+  }
+
+  h5 {
+      font-family: "Barlow", sans-serif;
+      font-weight: 600;
+      color: black;
+      background-color: white;
+      /* border: 1px solid #00ac79; */
+      margin: 1px;
+      padding: 1px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 25px;
+      font-size: 28px;
+  }
+
+  p {
+    text-align: left;
+    font-weight: normal;
+    font-size: 20px;
+    align-items: center;
+
+  }
+
+  p0 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    align-items: center;
+    color: black ;
+  }
+
+  p1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    align-items: center;
+    color: black ;
+  }
+
+  p2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    align-items: center;
+    color: #00ac79 ;
+  }
+
+  p3 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+    align-items: center;
+    color: black ;
+    justify-content: space-evenly;
+  }
+
+  p4 {
+    text-align: left;
+    font-weight: normal;
+    font-size: 18px;
+    align-items: center;
+    margin:0px;
+  }
+
+  p5 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    align-items: center;
+    margin:15px;
+    color: black ;
+    justify-content: space-evenly;
+  }
+
+  p6 {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+    align-items: center;
+    margin:5px;
+    color: black ;
+    height:50px;
+  }
+
+  p7 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    align-items: center;
+    margin:15px;
+    color: black ;
+  }
+
+  p8 {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    align-items: center;
+    margin:15px;
+    color: #00ac79 ;
+  }
+
+  a {
+    text-align: center;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .zip {
+    text-align: center;
+
+  }
+
+  .simWords {
+    text-align: center;
+    width: 100%;
+    border: none;
+    margin: 0px;
+    padding: 10px;
+    padding-top: 0px;
+  }
+
+  ::placeholder {
+    color: mediumseagreen;
+    font-size: 1em;
+    text-align: center;
+    opacity: 0.4;
+  }
+
+  #scoring {
+    font-size:27px;
+  }
+
+  #scoring2 {
+    font-size:14px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  #buttonSep {
+      background-color: white;
+      padding: 2px;
+      align-items: center;
+      width: 100%;
+      margin:0px;
+      border: 0px solid #00ac79;
+      justify-content: center;
+      display: flex;
+      text-align:center;
+      border-radius: 15px;
+  }
+
+  .Animal-Related{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Animal.jpg?raw=true);}
+  .Art{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Art%20Culture.jpg?raw=true);}
+  .Civil{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Civil%20Rights.jpg?raw=true);}
+  .Community{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Community%20Improvement.jpg?raw=true);}
+  .Crime{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Crime.jpg?raw=true);}
+  .Disease{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Diseases.jpg?raw=true);}
+  .Education{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Education.jpg?raw=true);}
+  .Environment{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Environmental%20Quality.jpg?raw=true);}
+  .Health{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Health.jpg?raw=true);}
+  .Human{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Human%20Services.jpg?raw=true);}
+  .International{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/International.jpg?raw=true);}
+  .Philanthropy{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Philanthropy.jpg?raw=true);}
+  .Public{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Public%2C%20Society%20Benefit.jpg?raw=true);}
+  .Recreation{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Sports%20and%20Recreation.jpg?raw=true);}
+  .Youth{background-image:url(https://github.com/jackvessa/Charity_Recommender/blob/master/IMG/Youth%20Development.jpg?raw=true);}
+
+
+  .cc-selector{
+     width: 100%;
+     height: 600px;
+     border: 0px solid black;
+     margin-left: 0px;
+     margin-right: 0px;
+     margin-bottom: 0px;
+     margin-top:0px;
+     padding:0px;
+   }
+  .cc-selector input{
+       margin:0;padding:0;
+       -webkit-appearance:none;
+          -moz-appearance:none;
+               appearance:none;
+   }
+  .cc-selector input:active +.drinkcard-cc, .cc-selector input:active +.drinkcard-cc{opacity: .9;}
+  .cc-selector input:checked +.drinkcard-cc, .cc-selector input:checked +.drinkcard-cc{
+      -webkit-filter: none;
+         -moz-filter: none;
+              filter: none;
+  }
+  .drinkcard-cc{
+      border: 0px solid #00ac79;
+      cursor:pointer;
+      background-size:contain;
+      background-repeat:no-repeat;
+      display:inline-block;
+      width:20%;
+      height:13%;
+      margin: 2px;
+      padding: 2px;
+      border-radius: 5px;
+      -webkit-transition: all 100ms ease-in;
+         -moz-transition: all 100ms ease-in;
+              transition: all 100ms ease-in;
+       -webkit-filter: brightness(1.2) grayscale(.9) opacity(.9);
+         -moz-filter: brightness(1.2) grayscale(.9) opacity(.9);
+              filter: brightness(1.2) grayscale(.9) opacity(.9);
+  }
+  .drinkcard-cc:hover{
+      -webkit-filter: brightness(1.0) grayscale(.4) opacity(.9);
+         -moz-filter: brightness(1.0) grayscale(.4) opacity(.9);
+               filter: brightness(1.0) grayscale(.3) opacity(.9);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    font: 16px Arial;
+    text-align: center;
+  }
+
+  label {
+      display: inline-block;
+      width: 24%;
+      text-align: center;
+  }
+
+  input {
+    font-weight: bold;
+    border: 1px solid transparent;
+    background-color: none;
+    padding: 10px;
+    height: 50px;
+    text-align: center;
+    width: 80%;
+    font-size: 20px;
+  }
+
+
+  input[type=radio] {
+    width: 0%;
+    height: 0%;
+    border: 0px solid transparent;
+
+    /* float: left; */
+  }
+
+  input[type=text] {
+    background-color: #f1f1f1;
+    width: 80%;
+    font-size: 25px;
+    text-align: center;
+    align-items: center;
+  }
+  input[type=submit] {
+    background-color: #00ac79;
+    color: #fff;
+    font-size: 20px;
+    width:80%;
+  }
+
+  .autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    color:#00ac79;
+    border: 0px solid black;
+    padding:0px;
+    margin:0px;
+  }
+
+  .autocomplete-items {
+    position: absolute;
+    border: 0.5px solid black;
+    background-color: #00ac79;
+    /* border-bottom: none; */
+    /* border-top: none; */
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin:0px;
+    padding:5px;
+  }
+
+  .autocomplete-items div {
+    /* padding: 10px; */
+    cursor: pointer;
+    background-color: #fff;
+    width: 98%;
+    margin:3px;
+    padding:5px;
+    border: 1px solid black;
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+  }
+  .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
+
+  .homepage_title {
+    width: 100%;
+    margin: 0px;
+    border: 0px solid #00ac79;
+    padding: 10px;
+  }
+
+  .simImage{
+    background-color: none;
+    /* width: 97%; */
+    border: 0px solid blue;
+    width: 100%;
+    height: 200px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #image1 {
+    width:80%;
+    height: auto;
+    vertical-align: bottom;
+  }
+
+  .SimilarCharity {
+    font-family: "Barlow", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    border: 0px solid #00ac79;
+    margin: 0%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 100%;
+    float:center;
+  }
+
+  .SimRecommendation {
+    font-family: "Barlow", sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    background-color: white;
+    border: 5px solid #00ac79;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding: 4px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+    width: 100%;
+    float:left;
+    display: inline-block;
+  }
+
 }
