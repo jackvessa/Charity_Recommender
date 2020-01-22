@@ -10,6 +10,9 @@ div {
 
 }
 
+html{
+  height: 100%;
+}
 
 .SimilarCharity {
   font-family: "Barlow", sans-serif;
@@ -70,12 +73,13 @@ div {
   float: center;
   font-weight: bold;
   border-radius: 25px;
+
 }
 
 .homepage_title {
   width: 100%;
   margin: 0px;
-    border: 0px solid #00ac79;
+  border: 0px solid #00ac79;
 }
 
 .navBar{
@@ -95,6 +99,7 @@ div {
   top:50%;
   left:50%;
   display: flex;
+
 }
 
 .head {
@@ -106,20 +111,19 @@ div {
   background-color: white;
   width: 100%;
   border: 0px solid blue;
-  height:100%;
-  margin: 0px;
-  margin-bottom: 20px;
-  padding: 0px;
-  /* float: center; */
+  /* height:100%; */
+  margin: 1%;
+  /* margin-bottom: 0px; */
+  padding: 10px;
   font-weight: bold;
   text-align:center;
   border-radius: 25px;
   justify-content: center;
   align-items: center;
-  top:50%;
-  left:50%;
+  /* top:50%;
+  left:50%; */
   display: flex;
-  float: none;
+  float: center;
 }
 
 .homebutton{
@@ -143,6 +147,36 @@ div {
   left:50%;
   display: flex; */
 }
+
+a.buttonFoot {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    -webkit-border-radius: 8px;
+    display: flex;
+    /* background-color: #00ac79; */
+    border-radius: 8px;
+    font-size: auto;
+    /* height: 50px; */
+    justify-content: center;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    vertical-align: middle;
+    align-items: center;
+    text-align: center;
+    width:32.5%;
+    float:left;
+    font-size:175%;
+    height:100%;
+
+}
+
 
 .simImage{
   background-color: none;
@@ -281,6 +315,8 @@ a.button {
     align-items: center;
     text-align: center;
     width:200px;
+    font-size: 170%;
+
 }
 
 a.button2 {
@@ -358,7 +394,7 @@ a.button4 {
 }
 
 #image1 {
-  width:35%;
+  width:500px;
   height: auto;
   vertical-align: bottom;
 }
@@ -403,27 +439,49 @@ a.button4 {
   padding: 6px;
   margin: 10px;
   width: 98%;
-  float: left
+  float: left;
+  /* padding-bottom: 70px; */
+  margin-bottom: 70px;
+
 }
 
 #searchTextArea {
-  height: 375px;
-  width:60%;
+  height: 250px;
+  width:80%;
   font-size: 20px;
   color: black;
   background-color: #f1f1f1;
 }
 
 
-/* img{
-    height: 150px;
-    width: 150px;
-} */
+head {
+  text-align: center;
+  align-items: center;
+}
 
 body {
-    background-color: white;
     margin: 0px;
+    padding-bottom: 70px;
+    position: relative;
+    /* height:100%; */
+    min-height:100vh;
 }
+
+
+
+.footer {
+  position : absolute;
+  bottom : 0;
+  height : 70px;
+  margin-top : 0px;
+  margin: 0px;
+  background-color: black;
+  width: 100%;
+  border: 0px solid #00ac79;
+  padding:0px;
+  /* display: block; */
+   /* float: none; */
+  }
 
 img {
     height: 150px;
@@ -436,10 +494,7 @@ li {
 
 /* Headers */
 
-head {
-  text-align: center;
-  align-items: center;
-}
+
 
 h1 {
     font-family: "Barlow", sans-serif;
@@ -500,8 +555,27 @@ h5 {
     font-size: 28px;
 }
 
+h6 {
+    font-family: "Barlow", sans-serif;
+    font-weight: 600;
+    color: white;
+    width:30%;
+    /* margin: 1px; */
+    /* padding: 1px; */
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0px;
+    font-size: 170.00%;
+    float: left;
+    vertical-align: middle;
+    display:table-cell;
+    height:100%;
+    margin: auto;
+    padding: 20px;
+  }
+
 p {
-  text-align: left;
+  text-align: left;ß
   font-weight: normal;
   font-size: 30px;
   align-items: center;
@@ -697,7 +771,7 @@ a {
     background-size:contain;
     background-repeat:no-repeat;
     display:inline-block;
-    width:17%;
+    width:21%;
     height:40%;
     margin: 9px;
     padding: 5px;
@@ -709,6 +783,8 @@ a {
        -moz-filter: brightness(1.2) grayscale(.9) opacity(.9);
             filter: brightness(1.2) grayscale(.9) opacity(.9);
 }
+
+
 .drinkcard-cc:hover{
     -webkit-filter: brightness(1.0) grayscale(.4) opacity(.9);
        -moz-filter: brightness(1.0) grayscale(.4) opacity(.9);
@@ -810,35 +886,24 @@ input[type=submit] {
   color: #ffffff;
 }
 
+@media only screen and (max-width: 900px) and (min-width: 640px){
+.drinkcard-cc{
+    width:23%;
+    height:30%;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+     -webkit-filter: brightness(1.2) grayscale(.9) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.9) opacity(.9);
+            filter: brightness(1.2) grayscale(.9) opacity(.9);
+}
+}
+
+
 @media only screen and (max-width: 640px) {
-  /* Divs */
-  div {
-      background-color: white;
-      width: 29%;
-      border: 4px solid #00ac79;
-      padding: 30px;
-      margin: 20px;
-      /* float: left; */
-      text-align:center;
-
-  }
-
-  .SimilarCharity {
-    font-family: "Barlow", sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    color: black;
-    background-color: white;
-    border: 2px solid #00ac79;
-    margin: 3px;
-    padding: 3px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 25px;
-    width: 100%;
-    max-height: 200px;
-  }
-
   .LocalInfo {
     font-family: "Barlow", sans-serif;
     font-size: 35px;
@@ -870,8 +935,8 @@ input[type=submit] {
   .navBar{
     background-color: #00ac79;
     width: 100%;
-    border: 0px solid blue;
-    height:70px;
+    border: 0px solid red;
+    height:auto;
     margin: 0px;
     padding: 0px;
     margin-bottom: 0px;
@@ -881,8 +946,6 @@ input[type=submit] {
     border-radius: 0px;
     justify-content: center;
     align-items: center;
-    top:50%;
-    left:50%;
     display: flex;
   }
 
@@ -892,7 +955,6 @@ input[type=submit] {
     border: 0px solid blue;
     height:370px;
     margin: 5px;
-    margin-bottom: 20px;
     padding: 0px;
     float: center;
     font-weight: bold;
@@ -910,10 +972,12 @@ input[type=submit] {
     background-color: white;
     /* width: 97%; */
     border: 0px solid blue;
-    width: 98%;
+    width: 60%;
     padding: 0px;
-    height: 30%;
-    margin: 1%;
+    height: auto;
+    margin: 2%;
+    float:center;
+    display:inline-block;
 
     /* height:250px; */
     /* margin: 5px;
@@ -951,6 +1015,8 @@ input[type=submit] {
     padding: 2px;
     margin: 2px;
     /* min-width: 280px; */
+    /* display: table; */
+
   }
 
   .Recommendations {
@@ -1018,7 +1084,7 @@ input[type=submit] {
       display: flex;
       background-color: #00ac79;
       border-radius: 2px;
-      height: 50px;
+      height: 30%;
       width: 100%;
       /* justify-content: center; */
       outline: none;
@@ -1046,7 +1112,7 @@ input[type=submit] {
       display: flex;
       background-color: #00ac79;
       border-radius: 8px;
-      font-size: 12px;
+      font-size: auto;
       height: 50px;
       justify-content: center;
       outline: none;
@@ -1059,7 +1125,8 @@ input[type=submit] {
       vertical-align: middle;
       align-items: center;
       text-align: center;
-      width:17%;
+      width:20%;
+      font-size: 100%;
   }
 
   a.button2 {
@@ -1136,6 +1203,30 @@ input[type=submit] {
     width:45%;
   }
 
+  a.buttonFoot {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      -webkit-border-radius: 8px;
+      display: flex;
+      /* background-color: #00ac79; */
+      border-radius: 8px;
+      font-size: auto;
+      justify-content: center;
+      outline: none;
+      color: white;
+      font-family: "Barlow", sans-serif;
+      font-weight: 600;
+      width:31%;
+      margin:0px;
+      padding: 0px;
+      text-decoration: none;
+      vertical-align: middle;
+      align-items: center;
+      text-align: center;
+  }
+
   #rcorners1 {
     border-radius: 25px;
     background-color: white;
@@ -1185,16 +1276,6 @@ input[type=submit] {
     font-size: 20px;
     color: black;
     background-color: #f1f1f1;
-  }
-
-
-  /* img{
-      height: 150px;
-      width: 150px;
-  } */
-
-  body {
-      background-color: white;
   }
 
   img {
@@ -1271,6 +1352,13 @@ input[type=submit] {
       border-radius: 25px;
       font-size: 28px;
   }
+
+  h6 {
+      color: white;
+      background-color: black;
+      min-width:190px;
+  }
+
 
   p {
     text-align: left;
@@ -1431,13 +1519,10 @@ input[type=submit] {
 
   .cc-selector{
      width: 100%;
-     height: 600px;
-     border: 0px solid black;
-     margin-left: 0px;
-     margin-right: 0px;
-     margin-bottom: 0px;
-     margin-top:0px;
+     height: 700px;
+     border: px solid black;
      padding:0px;
+     margin:0px;
    }
   .cc-selector input{
        margin:0;padding:0;
@@ -1457,8 +1542,8 @@ input[type=submit] {
       background-size:contain;
       background-repeat:no-repeat;
       display:inline-block;
-      width:20%;
-      height:13%;
+      width:30%;
+      height:20%;
       margin: 2px;
       padding: 2px;
       border-radius: 5px;
@@ -1473,12 +1558,6 @@ input[type=submit] {
       -webkit-filter: brightness(1.0) grayscale(.4) opacity(.9);
          -moz-filter: brightness(1.0) grayscale(.4) opacity(.9);
                filter: brightness(1.0) grayscale(.3) opacity(.9);
-  }
-
-  * { box-sizing: border-box; }
-  body {
-    font: 16px Arial;
-    text-align: center;
   }
 
   label {
@@ -1593,37 +1672,20 @@ input[type=submit] {
   }
 
   .SimilarCharity {
-    font-family: "Barlow", sans-serif;
-    font-size: 30px;
-    font-weight: 600;
-    color: black;
-    background-color: white;
-    border: 0px solid #00ac79;
     margin: 0%;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 25px;
     width: 100%;
-    float:center;
+    display: table;
   }
 
   .SimRecommendation {
-    font-family: "Barlow", sans-serif;
     font-size: 30px;
-    font-weight: 600;
-    color: black;
-    background-color: white;
     border: 5px solid #00ac79;
     margin-bottom: 1%;
     margin-top: 1%;
     padding: 4px;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 25px;
     width: 100%;
     float:left;
-    display: inline-block;
+
   }
 
 }

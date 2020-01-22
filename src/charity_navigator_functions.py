@@ -238,10 +238,6 @@ def get_recs_from_pickled_model(document):
 
     document = document.iloc[0]
 
-    print(document)
-
-    print(document.split())
-
     query_bow = loaded_dict.doc2bow(document.split())
 
     sims = loaded_index[loaded_model[query_bow]]
@@ -292,6 +288,32 @@ def predict_charity_topics(charity_number):
     corpus_lda_model = loaded_lda_model[loaded_bow_corpus]
 
     topics = ['Family / Human Services','Arts, Culture, Humanities','Community Development',
+              'Religion','Youth Development','Family / Community Development',
+              'Housing / Home Development','Research & Policy / International','Education',
+              'Health Research & Treatment','Human Services','Animals / Environment',
+              'U.S. State Charities','Human and Civil Services','Youth Development']
+
+    topics_list, probabilities = [], []
+
+    for charity in Sort_Tuple(corpus_lda_model[charity_number])[:3]:
+        topics_list.append(topics[charity[0]])
+        probabilities.append(round(charity[1]*100,2))
+
+    return topics_list, probabilities
+
+def predict_charity_topics_search(text):
+    '''
+    '''
+    # load lda model
+    loaded_lda_model = pickle.load(open('src/finalized_lda.sav', 'rb'))
+    # load bow corpus
+    loaded_bow_corpus = pickle.load(open('src/finalized_bow.sav', 'rb'))
+
+    loaded_bow_corpus.append(text)
+
+    corpus_lda_model = loaded_lda_model[loaded_bow_corpus]
+
+    topics = ['Family / Human Services','Arts, Culture, Humanities','Community Development',
               'Religion','Youth Development - Camp/Clubs','Family / Community Development',
               'Housing / Home Development','Research & Policy / International','Education',
               'Health Research & Treatment','Human Services - Food Aid','Animals / Environment',
@@ -299,7 +321,7 @@ def predict_charity_topics(charity_number):
 
     topics_list, probabilities = [], []
 
-    for charity in Sort_Tuple(corpus_lda_model[charity_number])[:3]:
+    for charity in Sort_Tuple(corpus_lda_model[-1])[:3]:
         topics_list.append(topics[charity[0]])
         probabilities.append(round(charity[1]*100,2))
 
