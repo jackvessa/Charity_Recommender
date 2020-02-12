@@ -1,6 +1,5 @@
 # Charity Recommender
-
-Access the web application at [http://www.charityrecommender.com/](http://www.charityrecommender.com/)
+Find your next great cause at [http://www.charityrecommender.com/](http://www.charityrecommender.com/)
 
 |![CharityRecommender Homepage](IMG/CR_Homepage.png)|
 |---|
